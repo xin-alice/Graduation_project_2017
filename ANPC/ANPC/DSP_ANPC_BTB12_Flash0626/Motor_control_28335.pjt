@@ -1,0 +1,72 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectName="DSP2833x"
+ProjectDir="E:\works\DSPWorks\ANPC\DSP_ANPC_BTB12_Flash0626\"
+ProjectType=Executable
+CPUFamily=TMS320C28XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="lib\rts2800_fpu32.lib"
+Source="lib\rts2800_fpu32_fast_supplement.lib"
+Source="sys_src\DSP2833x_Adc.c"
+Source="sys_src\DSP2833x_ADC_cal.asm"
+Source="sys_src\DSP2833x_CodeStartBranch.asm"
+Source="sys_src\DSP2833x_CpuTimers.c"
+Source="sys_src\DSP2833x_DefaultIsr.c"
+Source="sys_src\DSP2833x_ECap.c"
+Source="sys_src\DSP2833x_EPwm.c"
+Source="sys_src\DSP2833x_EQep.c"
+Source="sys_src\DSP2833x_GlobalVariableDefs.c"
+Source="sys_src\DSP2833x_Gpio.c"
+Source="sys_src\DSP2833x_MemCopy.c"
+Source="sys_src\DSP2833x_PieCtrl.c"
+Source="sys_src\DSP2833x_PieVect.c"
+Source="sys_src\DSP2833x_Sci.c"
+Source="sys_src\DSP2833x_SysCtrl.c"
+Source="sys_src\DSP2833x_usDelay.asm"
+Source="sys_src\DSP2833x_Xintf.c"
+Source="user_src\common_struct.c"
+Source="user_src\Motor_control.c"
+Source="user_src\personal_set.c"
+Source="user_src\Speed_measure.c"
+Source="user_src\VC_Motor.c"
+Source="cmd\28335_RAM_lnk.cmd"
+Source="cmd\DSP2833x_Headers_nonBIOS.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -q -pdr -fr"E:\works\DSPWorks\ANPC\DSP_ANPC_BTB12_Flash0626\Debug" -fs"E:\works\DSPWorks\ANPC\DSP_ANPC_BTB12_Flash0626\Debug" -i"..\sys_include..\..\user_include" -i"E:\works\DSPWorks\ANPC\DSP_ANPC_BTB12_Flash0626\sys_include" -i"E:\works\DSPWorks\ANPC\DSP_ANPC_BTB12_Flash0626\user_include" -d"_DEBUG" -d"LARGE_MODEL" -ml -mt -v28 --float_support=fpu32
+
+["Compiler" Settings: "Release"]
+Options=-q -o3 -fr"E:\works\DSPWorks\ANPC\DSP_ANPC_BTB12_Flash0626\Release" -d"LARGE_MODEL" -ml -v28
+
+["DspBiosBuilder" Settings: "Debug"]
+Options=-v28
+
+["DspBiosBuilder" Settings: "Release"]
+Options=-v28
+
+["Linker" Settings: "Debug"]
+Options=-q -c -ecode_start -m".\Debug\Motor_control.map" -o".\Debug\Motor_control.out" -stack0x200 -w -x -i"..\..\sys_include" -i"..\..\user_include" -l"rts2800_fpu32.lib" -priority
+
+["Linker" Settings: "Release"]
+Options=-q -c -o".\Release\Example_2833xCpuTimer.out" -x
+
+["lib\rts2800_fpu32.lib" Settings: "Debug"]
+LinkOrder=2
+
+["lib\rts2800_fpu32_fast_supplement.lib" Settings: "Debug"]
+LinkOrder=1
+
+["cmd\28335_RAM_lnk.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["cmd\28335_RAM_lnk.cmd" Settings: "Release"]
+LinkOrder=1
+

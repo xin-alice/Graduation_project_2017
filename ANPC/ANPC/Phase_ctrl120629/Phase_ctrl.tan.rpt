@@ -1,0 +1,1030 @@
+Timing Analyzer report for Phase_ctrl
+Tue Jul 17 16:02:48 2012
+Version 6.0 Build 178 04/27/2006 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. tsu
+  7. tco
+  8. tpd
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                        ;
++------------------------------+-------+---------------+----------------------------------+--------------------------+--------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                     ; To                 ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+--------------------------+--------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 8.114 ns                         ; flt[7]                   ; LED[6]~reg0        ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 12.478 ns                        ; Decoder:receive|err_com  ; pwmn[3]            ; clk        ; --       ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 12.318 ns                        ; flt[7]                   ; pwma[4]            ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -1.212 ns                        ; flt[5]                   ; LED[5]~reg0        ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 74.88 MHz ( period = 13.354 ns ) ; Encoder:send|counter1[2] ; Encoder:send|pulse ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                          ;                    ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+--------------------------+--------------------+------------+----------+--------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                ; Setting            ; From ; To ; Entity Name ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                           ; EPM570T100C5       ;      ;    ;             ;
+; Timing Models                                         ; Final              ;      ;    ;             ;
+; Number of source nodes to report per destination node ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                 ; 10                 ;      ;    ;             ;
+; Number of paths to report                             ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                          ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                            ; Off                ;      ;    ;             ;
+; Default hold multicycle                               ; Same As Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains             ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                        ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                      ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                 ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements               ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                      ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                  ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                         ; Off                ;      ;    ;             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                          ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------+--------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                           ; To                             ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------+--------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 74.88 MHz ( period = 13.354 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|pulse             ; clk        ; clk      ; None                        ; None                      ; 12.645 ns               ;
+; N/A                                     ; 75.85 MHz ( period = 13.184 ns )                    ; Encoder:send|counter1[1]       ; Encoder:send|pulse             ; clk        ; clk      ; None                        ; None                      ; 12.475 ns               ;
+; N/A                                     ; 76.34 MHz ( period = 13.099 ns )                    ; Encoder:send|counter1[8]       ; Encoder:send|pulse             ; clk        ; clk      ; None                        ; None                      ; 12.390 ns               ;
+; N/A                                     ; 76.95 MHz ( period = 12.995 ns )                    ; Encoder:send|counter1[0]       ; Encoder:send|pulse             ; clk        ; clk      ; None                        ; None                      ; 12.286 ns               ;
+; N/A                                     ; 77.18 MHz ( period = 12.957 ns )                    ; Encoder:send|counter1[5]       ; Encoder:send|pulse             ; clk        ; clk      ; None                        ; None                      ; 12.248 ns               ;
+; N/A                                     ; 77.62 MHz ( period = 12.884 ns )                    ; Encoder:send|counter1[9]       ; Encoder:send|pulse             ; clk        ; clk      ; None                        ; None                      ; 12.175 ns               ;
+; N/A                                     ; 79.16 MHz ( period = 12.632 ns )                    ; Encoder:send|counter1[7]       ; Encoder:send|pulse             ; clk        ; clk      ; None                        ; None                      ; 11.923 ns               ;
+; N/A                                     ; 79.38 MHz ( period = 12.597 ns )                    ; Encoder:send|counter1[6]       ; Encoder:send|pulse             ; clk        ; clk      ; None                        ; None                      ; 11.888 ns               ;
+; N/A                                     ; 79.99 MHz ( period = 12.501 ns )                    ; Encoder:send|counter1[3]       ; Encoder:send|pulse             ; clk        ; clk      ; None                        ; None                      ; 11.792 ns               ;
+; N/A                                     ; 81.12 MHz ( period = 12.328 ns )                    ; Encoder:send|counter1[4]       ; Encoder:send|pulse             ; clk        ; clk      ; None                        ; None                      ; 11.619 ns               ;
+; N/A                                     ; 87.38 MHz ( period = 11.444 ns )                    ; Encoder:send|data_temp[4]      ; Encoder:send|pulse             ; clk        ; clk      ; None                        ; None                      ; 10.735 ns               ;
+; N/A                                     ; 88.90 MHz ( period = 11.249 ns )                    ; Encoder:send|data_temp[1]      ; Encoder:send|pulse             ; clk        ; clk      ; None                        ; None                      ; 10.540 ns               ;
+; N/A                                     ; 89.61 MHz ( period = 11.159 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|counter1[4]       ; clk        ; clk      ; None                        ; None                      ; 10.450 ns               ;
+; N/A                                     ; 90.21 MHz ( period = 11.085 ns )                    ; counter_LED[6]                 ; LED_flag                       ; clk        ; clk      ; None                        ; None                      ; 10.376 ns               ;
+; N/A                                     ; 91.00 MHz ( period = 10.989 ns )                    ; Encoder:send|counter1[1]       ; Encoder:send|counter1[4]       ; clk        ; clk      ; None                        ; None                      ; 10.280 ns               ;
+; N/A                                     ; 91.32 MHz ( period = 10.951 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|counter1[7]       ; clk        ; clk      ; None                        ; None                      ; 10.242 ns               ;
+; N/A                                     ; 91.41 MHz ( period = 10.940 ns )                    ; Decoder:receive|i[3]           ; Decoder:receive|data[1]        ; clk        ; clk      ; None                        ; None                      ; 10.231 ns               ;
+; N/A                                     ; 91.73 MHz ( period = 10.901 ns )                    ; Encoder:send|data_temp[0]      ; Encoder:send|pulse             ; clk        ; clk      ; None                        ; None                      ; 10.192 ns               ;
+; N/A                                     ; 92.40 MHz ( period = 10.822 ns )                    ; Decoder:receive|i[3]           ; Decoder:receive|data[3]        ; clk        ; clk      ; None                        ; None                      ; 10.113 ns               ;
+; N/A                                     ; 92.40 MHz ( period = 10.822 ns )                    ; Decoder:receive|i[3]           ; Decoder:receive|data[2]        ; clk        ; clk      ; None                        ; None                      ; 10.113 ns               ;
+; N/A                                     ; 92.52 MHz ( period = 10.808 ns )                    ; Encoder:send|counter1[0]       ; Encoder:send|counter1[4]       ; clk        ; clk      ; None                        ; None                      ; 10.099 ns               ;
+; N/A                                     ; 92.58 MHz ( period = 10.802 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|counter1[5]       ; clk        ; clk      ; None                        ; None                      ; 10.093 ns               ;
+; N/A                                     ; 92.61 MHz ( period = 10.798 ns )                    ; counter_LED[2]                 ; LED_flag                       ; clk        ; clk      ; None                        ; None                      ; 10.089 ns               ;
+; N/A                                     ; 92.76 MHz ( period = 10.781 ns )                    ; Encoder:send|counter1[1]       ; Encoder:send|counter1[7]       ; clk        ; clk      ; None                        ; None                      ; 10.072 ns               ;
+; N/A                                     ; 93.54 MHz ( period = 10.691 ns )                    ; counter_LED[5]                 ; LED_flag                       ; clk        ; clk      ; None                        ; None                      ; 9.982 ns                ;
+; N/A                                     ; 93.68 MHz ( period = 10.675 ns )                    ; counter_LED[6]                 ; LED_temp[1]                    ; clk        ; clk      ; None                        ; None                      ; 9.966 ns                ;
+; N/A                                     ; 93.68 MHz ( period = 10.675 ns )                    ; counter_LED[6]                 ; LED_temp[2]                    ; clk        ; clk      ; None                        ; None                      ; 9.966 ns                ;
+; N/A                                     ; 93.68 MHz ( period = 10.675 ns )                    ; counter_LED[6]                 ; LED_temp[3]                    ; clk        ; clk      ; None                        ; None                      ; 9.966 ns                ;
+; N/A                                     ; 93.68 MHz ( period = 10.675 ns )                    ; counter_LED[6]                 ; LED_temp[4]                    ; clk        ; clk      ; None                        ; None                      ; 9.966 ns                ;
+; N/A                                     ; 93.72 MHz ( period = 10.670 ns )                    ; Encoder:send|counter1[3]       ; Encoder:send|data_temp[4]      ; clk        ; clk      ; None                        ; None                      ; 9.961 ns                ;
+; N/A                                     ; 93.82 MHz ( period = 10.659 ns )                    ; counter_LED[6]                 ; LED_temp[8]                    ; clk        ; clk      ; None                        ; None                      ; 9.950 ns                ;
+; N/A                                     ; 93.87 MHz ( period = 10.653 ns )                    ; counter_LED[7]                 ; LED_flag                       ; clk        ; clk      ; None                        ; None                      ; 9.944 ns                ;
+; N/A                                     ; 94.06 MHz ( period = 10.632 ns )                    ; Encoder:send|counter1[1]       ; Encoder:send|counter1[5]       ; clk        ; clk      ; None                        ; None                      ; 9.923 ns                ;
+; N/A                                     ; 94.34 MHz ( period = 10.600 ns )                    ; Encoder:send|counter1[0]       ; Encoder:send|counter1[7]       ; clk        ; clk      ; None                        ; None                      ; 9.891 ns                ;
+; N/A                                     ; 94.42 MHz ( period = 10.591 ns )                    ; counter_LED[23]                ; LED_flag                       ; clk        ; clk      ; None                        ; None                      ; 9.882 ns                ;
+; N/A                                     ; 94.72 MHz ( period = 10.557 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|counter1[3]       ; clk        ; clk      ; None                        ; None                      ; 9.848 ns                ;
+; N/A                                     ; 94.79 MHz ( period = 10.550 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|counter1[2]       ; clk        ; clk      ; None                        ; None                      ; 9.841 ns                ;
+; N/A                                     ; 94.80 MHz ( period = 10.548 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|counter1[1]       ; clk        ; clk      ; None                        ; None                      ; 9.839 ns                ;
+; N/A                                     ; 94.89 MHz ( period = 10.539 ns )                    ; counter_LED[6]                 ; LED_temp[7]                    ; clk        ; clk      ; None                        ; None                      ; 9.830 ns                ;
+; N/A                                     ; 94.89 MHz ( period = 10.539 ns )                    ; counter_LED[6]                 ; LED_temp[6]                    ; clk        ; clk      ; None                        ; None                      ; 9.830 ns                ;
+; N/A                                     ; 94.89 MHz ( period = 10.539 ns )                    ; counter_LED[6]                 ; LED_temp[5]                    ; clk        ; clk      ; None                        ; None                      ; 9.830 ns                ;
+; N/A                                     ; 94.96 MHz ( period = 10.531 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|counter1[8]       ; clk        ; clk      ; None                        ; None                      ; 9.822 ns                ;
+; N/A                                     ; 94.98 MHz ( period = 10.529 ns )                    ; Decoder:receive|i[1]           ; Decoder:receive|data[1]        ; clk        ; clk      ; None                        ; None                      ; 9.820 ns                ;
+; N/A                                     ; 95.22 MHz ( period = 10.502 ns )                    ; Encoder:send|counter1[5]       ; Encoder:send|counter1[4]       ; clk        ; clk      ; None                        ; None                      ; 9.793 ns                ;
+; N/A                                     ; 95.27 MHz ( period = 10.497 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|data_temp[4]      ; clk        ; clk      ; None                        ; None                      ; 9.788 ns                ;
+; N/A                                     ; 95.47 MHz ( period = 10.475 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|counter1[9]       ; clk        ; clk      ; None                        ; None                      ; 9.766 ns                ;
+; N/A                                     ; 95.68 MHz ( period = 10.451 ns )                    ; Encoder:send|counter1[0]       ; Encoder:send|counter1[5]       ; clk        ; clk      ; None                        ; None                      ; 9.742 ns                ;
+; N/A                                     ; 95.90 MHz ( period = 10.427 ns )                    ; delay:PWM_delay1|pwm_out       ; delay:PWM_delay1|pwm_out       ; clk        ; clk      ; None                        ; None                      ; 9.718 ns                ;
+; N/A                                     ; 96.05 MHz ( period = 10.411 ns )                    ; Decoder:receive|i[1]           ; Decoder:receive|data[3]        ; clk        ; clk      ; None                        ; None                      ; 9.702 ns                ;
+; N/A                                     ; 96.05 MHz ( period = 10.411 ns )                    ; Decoder:receive|i[1]           ; Decoder:receive|data[2]        ; clk        ; clk      ; None                        ; None                      ; 9.702 ns                ;
+; N/A                                     ; 96.26 MHz ( period = 10.388 ns )                    ; counter_LED[2]                 ; LED_temp[1]                    ; clk        ; clk      ; None                        ; None                      ; 9.679 ns                ;
+; N/A                                     ; 96.26 MHz ( period = 10.388 ns )                    ; counter_LED[2]                 ; LED_temp[2]                    ; clk        ; clk      ; None                        ; None                      ; 9.679 ns                ;
+; N/A                                     ; 96.26 MHz ( period = 10.388 ns )                    ; counter_LED[2]                 ; LED_temp[3]                    ; clk        ; clk      ; None                        ; None                      ; 9.679 ns                ;
+; N/A                                     ; 96.26 MHz ( period = 10.388 ns )                    ; counter_LED[2]                 ; LED_temp[4]                    ; clk        ; clk      ; None                        ; None                      ; 9.679 ns                ;
+; N/A                                     ; 96.27 MHz ( period = 10.387 ns )                    ; Encoder:send|counter1[1]       ; Encoder:send|counter1[3]       ; clk        ; clk      ; None                        ; None                      ; 9.678 ns                ;
+; N/A                                     ; 96.29 MHz ( period = 10.385 ns )                    ; counter_LED[6]                 ; counter_LED[20]                ; clk        ; clk      ; None                        ; None                      ; 9.676 ns                ;
+; N/A                                     ; 96.31 MHz ( period = 10.383 ns )                    ; counter_LED[20]                ; LED_flag                       ; clk        ; clk      ; None                        ; None                      ; 9.674 ns                ;
+; N/A                                     ; 96.34 MHz ( period = 10.380 ns )                    ; Encoder:send|counter1[1]       ; Encoder:send|counter1[2]       ; clk        ; clk      ; None                        ; None                      ; 9.671 ns                ;
+; N/A                                     ; 96.36 MHz ( period = 10.378 ns )                    ; Encoder:send|counter1[1]       ; Encoder:send|counter1[1]       ; clk        ; clk      ; None                        ; None                      ; 9.669 ns                ;
+; N/A                                     ; 96.41 MHz ( period = 10.372 ns )                    ; counter_LED[2]                 ; LED_temp[8]                    ; clk        ; clk      ; None                        ; None                      ; 9.663 ns                ;
+; N/A                                     ; 96.52 MHz ( period = 10.361 ns )                    ; Encoder:send|counter1[1]       ; Encoder:send|counter1[8]       ; clk        ; clk      ; None                        ; None                      ; 9.652 ns                ;
+; N/A                                     ; 96.80 MHz ( period = 10.331 ns )                    ; Decoder:receive|i[0]           ; Decoder:receive|data[1]        ; clk        ; clk      ; None                        ; None                      ; 9.622 ns                ;
+; N/A                                     ; 96.81 MHz ( period = 10.329 ns )                    ; Encoder:send|counter1[1]       ; Encoder:send|data_temp[4]      ; clk        ; clk      ; None                        ; None                      ; 9.620 ns                ;
+; N/A                                     ; 97.03 MHz ( period = 10.306 ns )                    ; Encoder:send|counter1[3]       ; Encoder:send|counter1[4]       ; clk        ; clk      ; None                        ; None                      ; 9.597 ns                ;
+; N/A                                     ; 97.04 MHz ( period = 10.305 ns )                    ; Encoder:send|counter1[1]       ; Encoder:send|counter1[9]       ; clk        ; clk      ; None                        ; None                      ; 9.596 ns                ;
+; N/A                                     ; 97.04 MHz ( period = 10.305 ns )                    ; counter_LED[6]                 ; counter_LED[0]                 ; clk        ; clk      ; None                        ; None                      ; 9.596 ns                ;
+; N/A                                     ; 97.14 MHz ( period = 10.294 ns )                    ; Encoder:send|counter1[5]       ; Encoder:send|counter1[7]       ; clk        ; clk      ; None                        ; None                      ; 9.585 ns                ;
+; N/A                                     ; 97.25 MHz ( period = 10.283 ns )                    ; Encoder:send|counter1[4]       ; Encoder:send|counter1[4]       ; clk        ; clk      ; None                        ; None                      ; 9.574 ns                ;
+; N/A                                     ; 97.27 MHz ( period = 10.281 ns )                    ; counter_LED[5]                 ; LED_temp[1]                    ; clk        ; clk      ; None                        ; None                      ; 9.572 ns                ;
+; N/A                                     ; 97.27 MHz ( period = 10.281 ns )                    ; counter_LED[5]                 ; LED_temp[2]                    ; clk        ; clk      ; None                        ; None                      ; 9.572 ns                ;
+; N/A                                     ; 97.27 MHz ( period = 10.281 ns )                    ; counter_LED[5]                 ; LED_temp[3]                    ; clk        ; clk      ; None                        ; None                      ; 9.572 ns                ;
+; N/A                                     ; 97.27 MHz ( period = 10.281 ns )                    ; counter_LED[5]                 ; LED_temp[4]                    ; clk        ; clk      ; None                        ; None                      ; 9.572 ns                ;
+; N/A                                     ; 97.33 MHz ( period = 10.274 ns )                    ; counter_LED[0]                 ; LED_flag                       ; clk        ; clk      ; None                        ; None                      ; 9.565 ns                ;
+; N/A                                     ; 97.37 MHz ( period = 10.270 ns )                    ; delay:PWM_delay2|counter_up[4] ; delay:PWM_delay2|counter_up_f  ; clk        ; clk      ; None                        ; None                      ; 9.561 ns                ;
+; N/A                                     ; 97.42 MHz ( period = 10.265 ns )                    ; counter_LED[5]                 ; LED_temp[8]                    ; clk        ; clk      ; None                        ; None                      ; 9.556 ns                ;
+; N/A                                     ; 97.54 MHz ( period = 10.252 ns )                    ; counter_LED[2]                 ; LED_temp[7]                    ; clk        ; clk      ; None                        ; None                      ; 9.543 ns                ;
+; N/A                                     ; 97.54 MHz ( period = 10.252 ns )                    ; counter_LED[2]                 ; LED_temp[6]                    ; clk        ; clk      ; None                        ; None                      ; 9.543 ns                ;
+; N/A                                     ; 97.54 MHz ( period = 10.252 ns )                    ; counter_LED[2]                 ; LED_temp[5]                    ; clk        ; clk      ; None                        ; None                      ; 9.543 ns                ;
+; N/A                                     ; 97.63 MHz ( period = 10.243 ns )                    ; counter_LED[7]                 ; LED_temp[1]                    ; clk        ; clk      ; None                        ; None                      ; 9.534 ns                ;
+; N/A                                     ; 97.63 MHz ( period = 10.243 ns )                    ; counter_LED[7]                 ; LED_temp[2]                    ; clk        ; clk      ; None                        ; None                      ; 9.534 ns                ;
+; N/A                                     ; 97.63 MHz ( period = 10.243 ns )                    ; counter_LED[7]                 ; LED_temp[3]                    ; clk        ; clk      ; None                        ; None                      ; 9.534 ns                ;
+; N/A                                     ; 97.63 MHz ( period = 10.243 ns )                    ; counter_LED[7]                 ; LED_temp[4]                    ; clk        ; clk      ; None                        ; None                      ; 9.534 ns                ;
+; N/A                                     ; 97.78 MHz ( period = 10.227 ns )                    ; counter_LED[7]                 ; LED_temp[8]                    ; clk        ; clk      ; None                        ; None                      ; 9.518 ns                ;
+; N/A                                     ; 97.91 MHz ( period = 10.213 ns )                    ; Decoder:receive|i[0]           ; Decoder:receive|data[3]        ; clk        ; clk      ; None                        ; None                      ; 9.504 ns                ;
+; N/A                                     ; 97.91 MHz ( period = 10.213 ns )                    ; Decoder:receive|i[0]           ; Decoder:receive|data[2]        ; clk        ; clk      ; None                        ; None                      ; 9.504 ns                ;
+; N/A                                     ; 97.98 MHz ( period = 10.206 ns )                    ; Encoder:send|counter1[0]       ; Encoder:send|counter1[3]       ; clk        ; clk      ; None                        ; None                      ; 9.497 ns                ;
+; N/A                                     ; 98.05 MHz ( period = 10.199 ns )                    ; Encoder:send|counter1[0]       ; Encoder:send|counter1[2]       ; clk        ; clk      ; None                        ; None                      ; 9.490 ns                ;
+; N/A                                     ; 98.07 MHz ( period = 10.197 ns )                    ; Encoder:send|counter1[0]       ; Encoder:send|counter1[1]       ; clk        ; clk      ; None                        ; None                      ; 9.488 ns                ;
+; N/A                                     ; 98.22 MHz ( period = 10.181 ns )                    ; counter_LED[23]                ; LED_temp[1]                    ; clk        ; clk      ; None                        ; None                      ; 9.472 ns                ;
+; N/A                                     ; 98.22 MHz ( period = 10.181 ns )                    ; counter_LED[23]                ; LED_temp[2]                    ; clk        ; clk      ; None                        ; None                      ; 9.472 ns                ;
+; N/A                                     ; 98.22 MHz ( period = 10.181 ns )                    ; counter_LED[23]                ; LED_temp[3]                    ; clk        ; clk      ; None                        ; None                      ; 9.472 ns                ;
+; N/A                                     ; 98.22 MHz ( period = 10.181 ns )                    ; counter_LED[23]                ; LED_temp[4]                    ; clk        ; clk      ; None                        ; None                      ; 9.472 ns                ;
+; N/A                                     ; 98.23 MHz ( period = 10.180 ns )                    ; Encoder:send|counter1[0]       ; Encoder:send|counter1[8]       ; clk        ; clk      ; None                        ; None                      ; 9.471 ns                ;
+; N/A                                     ; 98.38 MHz ( period = 10.165 ns )                    ; counter_LED[23]                ; LED_temp[8]                    ; clk        ; clk      ; None                        ; None                      ; 9.456 ns                ;
+; N/A                                     ; 98.52 MHz ( period = 10.150 ns )                    ; Decoder:receive|i[3]           ; Decoder:receive|data[5]        ; clk        ; clk      ; None                        ; None                      ; 9.441 ns                ;
+; N/A                                     ; 98.52 MHz ( period = 10.150 ns )                    ; Decoder:receive|i[3]           ; Decoder:receive|data[4]        ; clk        ; clk      ; None                        ; None                      ; 9.441 ns                ;
+; N/A                                     ; 98.57 MHz ( period = 10.145 ns )                    ; Encoder:send|counter1[5]       ; Encoder:send|counter1[5]       ; clk        ; clk      ; None                        ; None                      ; 9.436 ns                ;
+; N/A                                     ; 98.57 MHz ( period = 10.145 ns )                    ; counter_LED[5]                 ; LED_temp[7]                    ; clk        ; clk      ; None                        ; None                      ; 9.436 ns                ;
+; N/A                                     ; 98.57 MHz ( period = 10.145 ns )                    ; counter_LED[5]                 ; LED_temp[6]                    ; clk        ; clk      ; None                        ; None                      ; 9.436 ns                ;
+; N/A                                     ; 98.57 MHz ( period = 10.145 ns )                    ; counter_LED[5]                 ; LED_temp[5]                    ; clk        ; clk      ; None                        ; None                      ; 9.436 ns                ;
+; N/A                                     ; 98.78 MHz ( period = 10.124 ns )                    ; Encoder:send|counter1[0]       ; Encoder:send|counter1[9]       ; clk        ; clk      ; None                        ; None                      ; 9.415 ns                ;
+; N/A                                     ; 98.94 MHz ( period = 10.107 ns )                    ; counter_LED[7]                 ; LED_temp[7]                    ; clk        ; clk      ; None                        ; None                      ; 9.398 ns                ;
+; N/A                                     ; 98.94 MHz ( period = 10.107 ns )                    ; counter_LED[7]                 ; LED_temp[6]                    ; clk        ; clk      ; None                        ; None                      ; 9.398 ns                ;
+; N/A                                     ; 98.94 MHz ( period = 10.107 ns )                    ; counter_LED[7]                 ; LED_temp[5]                    ; clk        ; clk      ; None                        ; None                      ; 9.398 ns                ;
+; N/A                                     ; 99.03 MHz ( period = 10.098 ns )                    ; Encoder:send|counter1[3]       ; Encoder:send|counter1[7]       ; clk        ; clk      ; None                        ; None                      ; 9.389 ns                ;
+; N/A                                     ; 99.03 MHz ( period = 10.098 ns )                    ; counter_LED[2]                 ; counter_LED[20]                ; clk        ; clk      ; None                        ; None                      ; 9.389 ns                ;
+; N/A                                     ; 99.26 MHz ( period = 10.075 ns )                    ; Encoder:send|counter1[4]       ; Encoder:send|counter1[7]       ; clk        ; clk      ; None                        ; None                      ; 9.366 ns                ;
+; N/A                                     ; 99.27 MHz ( period = 10.074 ns )                    ; Encoder:send|counter1[7]       ; Encoder:send|data_temp[4]      ; clk        ; clk      ; None                        ; None                      ; 9.365 ns                ;
+; N/A                                     ; 99.55 MHz ( period = 10.045 ns )                    ; counter_LED[23]                ; LED_temp[7]                    ; clk        ; clk      ; None                        ; None                      ; 9.336 ns                ;
+; N/A                                     ; 99.55 MHz ( period = 10.045 ns )                    ; counter_LED[23]                ; LED_temp[6]                    ; clk        ; clk      ; None                        ; None                      ; 9.336 ns                ;
+; N/A                                     ; 99.55 MHz ( period = 10.045 ns )                    ; counter_LED[23]                ; LED_temp[5]                    ; clk        ; clk      ; None                        ; None                      ; 9.336 ns                ;
+; N/A                                     ; 99.68 MHz ( period = 10.032 ns )                    ; Encoder:send|counter1[3]       ; Encoder:send|data_temp[9]      ; clk        ; clk      ; None                        ; None                      ; 9.323 ns                ;
+; N/A                                     ; 99.68 MHz ( period = 10.032 ns )                    ; Encoder:send|counter1[3]       ; Encoder:send|data_temp[8]      ; clk        ; clk      ; None                        ; None                      ; 9.323 ns                ;
+; N/A                                     ; 99.68 MHz ( period = 10.032 ns )                    ; Encoder:send|counter1[3]       ; Encoder:send|data_temp[6]      ; clk        ; clk      ; None                        ; None                      ; 9.323 ns                ;
+; N/A                                     ; 99.68 MHz ( period = 10.032 ns )                    ; Encoder:send|counter1[3]       ; Encoder:send|data_temp[7]      ; clk        ; clk      ; None                        ; None                      ; 9.323 ns                ;
+; N/A                                     ; 99.68 MHz ( period = 10.032 ns )                    ; Encoder:send|counter1[3]       ; Encoder:send|data_temp[5]      ; clk        ; clk      ; None                        ; None                      ; 9.323 ns                ;
+; N/A                                     ; 99.68 MHz ( period = 10.032 ns )                    ; Encoder:send|counter1[3]       ; Encoder:send|data_temp[3]      ; clk        ; clk      ; None                        ; None                      ; 9.323 ns                ;
+; N/A                                     ; 99.68 MHz ( period = 10.032 ns )                    ; Encoder:send|counter1[3]       ; Encoder:send|data_temp[0]      ; clk        ; clk      ; None                        ; None                      ; 9.323 ns                ;
+; N/A                                     ; 99.68 MHz ( period = 10.032 ns )                    ; Encoder:send|counter1[3]       ; Encoder:send|data_temp[1]      ; clk        ; clk      ; None                        ; None                      ; 9.323 ns                ;
+; N/A                                     ; 99.68 MHz ( period = 10.032 ns )                    ; Encoder:send|counter1[3]       ; Encoder:send|data_temp[2]      ; clk        ; clk      ; None                        ; None                      ; 9.323 ns                ;
+; N/A                                     ; 99.68 MHz ( period = 10.032 ns )                    ; Encoder:send|counter1[3]       ; Encoder:send|data_temp[15]     ; clk        ; clk      ; None                        ; None                      ; 9.323 ns                ;
+; N/A                                     ; 99.82 MHz ( period = 10.018 ns )                    ; counter_LED[2]                 ; counter_LED[0]                 ; clk        ; clk      ; None                        ; None                      ; 9.309 ns                ;
+; N/A                                     ; 99.88 MHz ( period = 10.012 ns )                    ; Decoder:receive|counter1[1]    ; Decoder:receive|data[1]        ; clk        ; clk      ; None                        ; None                      ; 9.303 ns                ;
+; N/A                                     ; 100.06 MHz ( period = 9.994 ns )                    ; Encoder:send|counter1[3]       ; Encoder:send|counter1[9]       ; clk        ; clk      ; None                        ; None                      ; 9.285 ns                ;
+; N/A                                     ; 100.09 MHz ( period = 9.991 ns )                    ; counter_LED[5]                 ; counter_LED[20]                ; clk        ; clk      ; None                        ; None                      ; 9.282 ns                ;
+; N/A                                     ; 100.27 MHz ( period = 9.973 ns )                    ; counter_LED[20]                ; LED_temp[1]                    ; clk        ; clk      ; None                        ; None                      ; 9.264 ns                ;
+; N/A                                     ; 100.27 MHz ( period = 9.973 ns )                    ; counter_LED[20]                ; LED_temp[2]                    ; clk        ; clk      ; None                        ; None                      ; 9.264 ns                ;
+; N/A                                     ; 100.27 MHz ( period = 9.973 ns )                    ; counter_LED[20]                ; LED_temp[3]                    ; clk        ; clk      ; None                        ; None                      ; 9.264 ns                ;
+; N/A                                     ; 100.27 MHz ( period = 9.973 ns )                    ; counter_LED[20]                ; LED_temp[4]                    ; clk        ; clk      ; None                        ; None                      ; 9.264 ns                ;
+; N/A                                     ; 100.33 MHz ( period = 9.967 ns )                    ; Decoder:receive|pulse_last[6]  ; Decoder:receive|counter2_start ; clk        ; clk      ; None                        ; None                      ; 9.258 ns                ;
+; N/A                                     ; 100.35 MHz ( period = 9.965 ns )                    ; Encoder:send|counter1[0]       ; Encoder:send|data_temp[4]      ; clk        ; clk      ; None                        ; None                      ; 9.256 ns                ;
+; N/A                                     ; 100.43 MHz ( period = 9.957 ns )                    ; counter_LED[20]                ; LED_temp[8]                    ; clk        ; clk      ; None                        ; None                      ; 9.248 ns                ;
+; N/A                                     ; 100.47 MHz ( period = 9.953 ns )                    ; counter_LED[7]                 ; counter_LED[20]                ; clk        ; clk      ; None                        ; None                      ; 9.244 ns                ;
+; N/A                                     ; 100.51 MHz ( period = 9.949 ns )                    ; Encoder:send|counter1[3]       ; Encoder:send|counter1[5]       ; clk        ; clk      ; None                        ; None                      ; 9.240 ns                ;
+; N/A                                     ; 100.54 MHz ( period = 9.946 ns )                    ; Decoder:receive|counter2_start ; Decoder:receive|i[4]           ; clk        ; clk      ; None                        ; None                      ; 9.237 ns                ;
+; N/A                                     ; 100.54 MHz ( period = 9.946 ns )                    ; Decoder:receive|counter2_start ; Decoder:receive|i[5]           ; clk        ; clk      ; None                        ; None                      ; 9.237 ns                ;
+; N/A                                     ; 100.54 MHz ( period = 9.946 ns )                    ; Decoder:receive|counter2_start ; Decoder:receive|i[1]           ; clk        ; clk      ; None                        ; None                      ; 9.237 ns                ;
+; N/A                                     ; 100.54 MHz ( period = 9.946 ns )                    ; Decoder:receive|counter2_start ; Decoder:receive|i[3]           ; clk        ; clk      ; None                        ; None                      ; 9.237 ns                ;
+; N/A                                     ; 100.75 MHz ( period = 9.926 ns )                    ; Encoder:send|counter1[4]       ; Encoder:send|counter1[5]       ; clk        ; clk      ; None                        ; None                      ; 9.217 ns                ;
+; N/A                                     ; 100.90 MHz ( period = 9.911 ns )                    ; counter_LED[5]                 ; counter_LED[0]                 ; clk        ; clk      ; None                        ; None                      ; 9.202 ns                ;
+; N/A                                     ; 101.01 MHz ( period = 9.900 ns )                    ; Encoder:send|counter1[5]       ; Encoder:send|counter1[3]       ; clk        ; clk      ; None                        ; None                      ; 9.191 ns                ;
+; N/A                                     ; 101.07 MHz ( period = 9.894 ns )                    ; Decoder:receive|counter1[1]    ; Decoder:receive|data[3]        ; clk        ; clk      ; None                        ; None                      ; 9.185 ns                ;
+; N/A                                     ; 101.07 MHz ( period = 9.894 ns )                    ; Decoder:receive|counter1[1]    ; Decoder:receive|data[2]        ; clk        ; clk      ; None                        ; None                      ; 9.185 ns                ;
+; N/A                                     ; 101.08 MHz ( period = 9.893 ns )                    ; Encoder:send|counter1[5]       ; Encoder:send|counter1[2]       ; clk        ; clk      ; None                        ; None                      ; 9.184 ns                ;
+; N/A                                     ; 101.10 MHz ( period = 9.891 ns )                    ; Encoder:send|counter1[5]       ; Encoder:send|counter1[1]       ; clk        ; clk      ; None                        ; None                      ; 9.182 ns                ;
+; N/A                                     ; 101.10 MHz ( period = 9.891 ns )                    ; counter_LED[23]                ; counter_LED[20]                ; clk        ; clk      ; None                        ; None                      ; 9.182 ns                ;
+; N/A                                     ; 101.28 MHz ( period = 9.874 ns )                    ; Encoder:send|counter1[5]       ; Encoder:send|counter1[8]       ; clk        ; clk      ; None                        ; None                      ; 9.165 ns                ;
+; N/A                                     ; 101.29 MHz ( period = 9.873 ns )                    ; counter_LED[7]                 ; counter_LED[0]                 ; clk        ; clk      ; None                        ; None                      ; 9.164 ns                ;
+; N/A                                     ; 101.29 MHz ( period = 9.873 ns )                    ; Decoder:receive|counter1[0]    ; Decoder:receive|data[1]        ; clk        ; clk      ; None                        ; None                      ; 9.164 ns                ;
+; N/A                                     ; 101.38 MHz ( period = 9.864 ns )                    ; counter_LED[0]                 ; LED_temp[1]                    ; clk        ; clk      ; None                        ; None                      ; 9.155 ns                ;
+; N/A                                     ; 101.38 MHz ( period = 9.864 ns )                    ; counter_LED[0]                 ; LED_temp[2]                    ; clk        ; clk      ; None                        ; None                      ; 9.155 ns                ;
+; N/A                                     ; 101.38 MHz ( period = 9.864 ns )                    ; counter_LED[0]                 ; LED_temp[3]                    ; clk        ; clk      ; None                        ; None                      ; 9.155 ns                ;
+; N/A                                     ; 101.38 MHz ( period = 9.864 ns )                    ; counter_LED[0]                 ; LED_temp[4]                    ; clk        ; clk      ; None                        ; None                      ; 9.155 ns                ;
+; N/A                                     ; 101.43 MHz ( period = 9.859 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|data_temp[9]      ; clk        ; clk      ; None                        ; None                      ; 9.150 ns                ;
+; N/A                                     ; 101.43 MHz ( period = 9.859 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|data_temp[8]      ; clk        ; clk      ; None                        ; None                      ; 9.150 ns                ;
+; N/A                                     ; 101.43 MHz ( period = 9.859 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|data_temp[6]      ; clk        ; clk      ; None                        ; None                      ; 9.150 ns                ;
+; N/A                                     ; 101.43 MHz ( period = 9.859 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|data_temp[7]      ; clk        ; clk      ; None                        ; None                      ; 9.150 ns                ;
+; N/A                                     ; 101.43 MHz ( period = 9.859 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|data_temp[5]      ; clk        ; clk      ; None                        ; None                      ; 9.150 ns                ;
+; N/A                                     ; 101.43 MHz ( period = 9.859 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|data_temp[3]      ; clk        ; clk      ; None                        ; None                      ; 9.150 ns                ;
+; N/A                                     ; 101.43 MHz ( period = 9.859 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|data_temp[0]      ; clk        ; clk      ; None                        ; None                      ; 9.150 ns                ;
+; N/A                                     ; 101.43 MHz ( period = 9.859 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|data_temp[1]      ; clk        ; clk      ; None                        ; None                      ; 9.150 ns                ;
+; N/A                                     ; 101.43 MHz ( period = 9.859 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|data_temp[2]      ; clk        ; clk      ; None                        ; None                      ; 9.150 ns                ;
+; N/A                                     ; 101.43 MHz ( period = 9.859 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|data_temp[15]     ; clk        ; clk      ; None                        ; None                      ; 9.150 ns                ;
+; N/A                                     ; 101.54 MHz ( period = 9.848 ns )                    ; counter_LED[0]                 ; LED_temp[8]                    ; clk        ; clk      ; None                        ; None                      ; 9.139 ns                ;
+; N/A                                     ; 101.66 MHz ( period = 9.837 ns )                    ; counter_LED[20]                ; LED_temp[7]                    ; clk        ; clk      ; None                        ; None                      ; 9.128 ns                ;
+; N/A                                     ; 101.66 MHz ( period = 9.837 ns )                    ; counter_LED[20]                ; LED_temp[6]                    ; clk        ; clk      ; None                        ; None                      ; 9.128 ns                ;
+; N/A                                     ; 101.66 MHz ( period = 9.837 ns )                    ; counter_LED[20]                ; LED_temp[5]                    ; clk        ; clk      ; None                        ; None                      ; 9.128 ns                ;
+; N/A                                     ; 101.85 MHz ( period = 9.818 ns )                    ; Encoder:send|counter1[5]       ; Encoder:send|counter1[9]       ; clk        ; clk      ; None                        ; None                      ; 9.109 ns                ;
+; N/A                                     ; 101.93 MHz ( period = 9.811 ns )                    ; counter_LED[23]                ; counter_LED[0]                 ; clk        ; clk      ; None                        ; None                      ; 9.102 ns                ;
+; N/A                                     ; 102.23 MHz ( period = 9.782 ns )                    ; Encoder:send|data_temp[7]      ; Encoder:send|pulse             ; clk        ; clk      ; None                        ; None                      ; 9.073 ns                ;
+; N/A                                     ; 102.48 MHz ( period = 9.758 ns )                    ; delay:PWM_delay2|counter_up[3] ; delay:PWM_delay2|counter_up_f  ; clk        ; clk      ; None                        ; None                      ; 9.049 ns                ;
+; N/A                                     ; 102.51 MHz ( period = 9.755 ns )                    ; Decoder:receive|counter1[0]    ; Decoder:receive|data[3]        ; clk        ; clk      ; None                        ; None                      ; 9.046 ns                ;
+; N/A                                     ; 102.51 MHz ( period = 9.755 ns )                    ; Decoder:receive|counter1[0]    ; Decoder:receive|data[2]        ; clk        ; clk      ; None                        ; None                      ; 9.046 ns                ;
+; N/A                                     ; 102.68 MHz ( period = 9.739 ns )                    ; Decoder:receive|i[1]           ; Decoder:receive|data[5]        ; clk        ; clk      ; None                        ; None                      ; 9.030 ns                ;
+; N/A                                     ; 102.68 MHz ( period = 9.739 ns )                    ; Decoder:receive|i[1]           ; Decoder:receive|data[4]        ; clk        ; clk      ; None                        ; None                      ; 9.030 ns                ;
+; N/A                                     ; 102.80 MHz ( period = 9.728 ns )                    ; counter_LED[0]                 ; LED_temp[7]                    ; clk        ; clk      ; None                        ; None                      ; 9.019 ns                ;
+; N/A                                     ; 102.80 MHz ( period = 9.728 ns )                    ; counter_LED[0]                 ; LED_temp[6]                    ; clk        ; clk      ; None                        ; None                      ; 9.019 ns                ;
+; N/A                                     ; 102.80 MHz ( period = 9.728 ns )                    ; counter_LED[0]                 ; LED_temp[5]                    ; clk        ; clk      ; None                        ; None                      ; 9.019 ns                ;
+; N/A                                     ; 102.89 MHz ( period = 9.719 ns )                    ; Decoder:receive|pulse_last[8]  ; Decoder:receive|counter2_start ; clk        ; clk      ; None                        ; None                      ; 9.010 ns                ;
+; N/A                                     ; 102.94 MHz ( period = 9.714 ns )                    ; Encoder:send|counter1[8]       ; Encoder:send|data_temp[4]      ; clk        ; clk      ; None                        ; None                      ; 9.005 ns                ;
+; N/A                                     ; 102.97 MHz ( period = 9.712 ns )                    ; Encoder:send|counter1[2]       ; Encoder:send|counter1[6]       ; clk        ; clk      ; None                        ; None                      ; 9.003 ns                ;
+; N/A                                     ; 103.03 MHz ( period = 9.706 ns )                    ; Decoder:receive|i[2]           ; Decoder:receive|data[1]        ; clk        ; clk      ; None                        ; None                      ; 8.997 ns                ;
+; N/A                                     ; 103.05 MHz ( period = 9.704 ns )                    ; Encoder:send|counter1[3]       ; Encoder:send|counter1[3]       ; clk        ; clk      ; None                        ; None                      ; 8.995 ns                ;
+; N/A                                     ; 103.05 MHz ( period = 9.704 ns )                    ; Decoder:receive|counter1[2]    ; Decoder:receive|data[1]        ; clk        ; clk      ; None                        ; None                      ; 8.995 ns                ;
+; N/A                                     ; 103.12 MHz ( period = 9.697 ns )                    ; Encoder:send|counter1[3]       ; Encoder:send|counter1[2]       ; clk        ; clk      ; None                        ; None                      ; 8.988 ns                ;
+; N/A                                     ; 103.15 MHz ( period = 9.695 ns )                    ; Encoder:send|counter1[3]       ; Encoder:send|counter1[1]       ; clk        ; clk      ; None                        ; None                      ; 8.986 ns                ;
+; N/A                                     ; 103.19 MHz ( period = 9.691 ns )                    ; Encoder:send|counter1[1]       ; Encoder:send|data_temp[9]      ; clk        ; clk      ; None                        ; None                      ; 8.982 ns                ;
+; N/A                                     ; 103.19 MHz ( period = 9.691 ns )                    ; Encoder:send|counter1[1]       ; Encoder:send|data_temp[8]      ; clk        ; clk      ; None                        ; None                      ; 8.982 ns                ;
+; N/A                                     ; 103.19 MHz ( period = 9.691 ns )                    ; Encoder:send|counter1[1]       ; Encoder:send|data_temp[6]      ; clk        ; clk      ; None                        ; None                      ; 8.982 ns                ;
+; N/A                                     ; 103.19 MHz ( period = 9.691 ns )                    ; Encoder:send|counter1[1]       ; Encoder:send|data_temp[7]      ; clk        ; clk      ; None                        ; None                      ; 8.982 ns                ;
+; N/A                                     ; 103.19 MHz ( period = 9.691 ns )                    ; Encoder:send|counter1[1]       ; Encoder:send|data_temp[5]      ; clk        ; clk      ; None                        ; None                      ; 8.982 ns                ;
+; N/A                                     ; 103.19 MHz ( period = 9.691 ns )                    ; Encoder:send|counter1[1]       ; Encoder:send|data_temp[3]      ; clk        ; clk      ; None                        ; None                      ; 8.982 ns                ;
+; N/A                                     ; 103.19 MHz ( period = 9.691 ns )                    ; Encoder:send|counter1[1]       ; Encoder:send|data_temp[0]      ; clk        ; clk      ; None                        ; None                      ; 8.982 ns                ;
+; N/A                                     ; 103.19 MHz ( period = 9.691 ns )                    ; Encoder:send|counter1[1]       ; Encoder:send|data_temp[1]      ; clk        ; clk      ; None                        ; None                      ; 8.982 ns                ;
+; N/A                                     ; 103.19 MHz ( period = 9.691 ns )                    ; Encoder:send|counter1[1]       ; Encoder:send|data_temp[2]      ; clk        ; clk      ; None                        ; None                      ; 8.982 ns                ;
+; N/A                                     ; 103.19 MHz ( period = 9.691 ns )                    ; Encoder:send|counter1[1]       ; Encoder:send|data_temp[15]     ; clk        ; clk      ; None                        ; None                      ; 8.982 ns                ;
+; N/A                                     ; 103.27 MHz ( period = 9.683 ns )                    ; counter_LED[20]                ; counter_LED[20]                ; clk        ; clk      ; None                        ; None                      ; 8.974 ns                ;
+; N/A                                     ; 103.28 MHz ( period = 9.682 ns )                    ; Decoder:receive|counter1[3]    ; Decoder:receive|data[1]        ; clk        ; clk      ; None                        ; None                      ; 8.973 ns                ;
+; N/A                                     ; 103.30 MHz ( period = 9.681 ns )                    ; Encoder:send|counter1[4]       ; Encoder:send|counter1[3]       ; clk        ; clk      ; None                        ; None                      ; 8.972 ns                ;
+; N/A                                     ; 103.31 MHz ( period = 9.680 ns )                    ; counter_LED[3]                 ; LED_flag                       ; clk        ; clk      ; None                        ; None                      ; 8.971 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                ;                                ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------+--------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                                                                             ;
++-----------------------------------------+-----------------------------------------------------+------------+--------+--------------------------------+----------+
+; Slack                                   ; Required tsu                                        ; Actual tsu ; From   ; To                             ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+--------+--------------------------------+----------+
+; N/A                                     ; None                                                ; 8.114 ns   ; flt[7] ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 8.112 ns   ; flt[7] ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 8.106 ns   ; flt[7] ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.750 ns   ; flt[1] ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.748 ns   ; flt[1] ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.742 ns   ; flt[1] ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.669 ns   ; flt[7] ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.360 ns   ; flt[6] ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.358 ns   ; flt[6] ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.352 ns   ; flt[6] ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.336 ns   ; flt[7] ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.329 ns   ; flt[7] ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.329 ns   ; flt[7] ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.305 ns   ; flt[1] ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.203 ns   ; flt[7] ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.172 ns   ; SW[6]  ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.170 ns   ; SW[6]  ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.164 ns   ; SW[6]  ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.158 ns   ; flt[8] ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.156 ns   ; flt[8] ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.153 ns   ; flt[2] ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.151 ns   ; flt[2] ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.150 ns   ; flt[8] ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.145 ns   ; flt[2] ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.084 ns   ; flt[5] ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.082 ns   ; flt[5] ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 7.076 ns   ; flt[5] ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.972 ns   ; flt[1] ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.965 ns   ; flt[1] ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.965 ns   ; flt[1] ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.915 ns   ; flt[6] ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.914 ns   ; flt[4] ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.912 ns   ; flt[4] ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.906 ns   ; flt[4] ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.839 ns   ; flt[1] ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.762 ns   ; flt[7] ; LED_temp_err[2]                ; clk      ;
+; N/A                                     ; None                                                ; 6.755 ns   ; flt[7] ; LED_temp_err[4]                ; clk      ;
+; N/A                                     ; None                                                ; 6.743 ns   ; SW[5]  ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.741 ns   ; SW[5]  ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.735 ns   ; SW[5]  ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.727 ns   ; SW[6]  ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.713 ns   ; flt[8] ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.708 ns   ; flt[2] ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.689 ns   ; flt[7] ; Encoder:send|data_temp[15]     ; clk      ;
+; N/A                                     ; None                                                ; 6.680 ns   ; flt[3] ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.678 ns   ; flt[3] ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.672 ns   ; flt[3] ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.646 ns   ; SW[1]  ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.644 ns   ; SW[1]  ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.639 ns   ; flt[5] ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.638 ns   ; SW[1]  ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.582 ns   ; flt[6] ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.575 ns   ; flt[6] ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.575 ns   ; flt[6] ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.560 ns   ; SW[4]  ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.558 ns   ; SW[4]  ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.552 ns   ; SW[4]  ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.500 ns   ; flt[7] ; LED_temp_err[5]                ; clk      ;
+; N/A                                     ; None                                                ; 6.492 ns   ; flt[7] ; LED_temp_err[7]                ; clk      ;
+; N/A                                     ; None                                                ; 6.469 ns   ; flt[4] ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.449 ns   ; flt[6] ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.398 ns   ; flt[1] ; LED_temp_err[2]                ; clk      ;
+; N/A                                     ; None                                                ; 6.394 ns   ; SW[6]  ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.391 ns   ; flt[1] ; LED_temp_err[4]                ; clk      ;
+; N/A                                     ; None                                                ; 6.387 ns   ; SW[6]  ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.387 ns   ; SW[6]  ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.380 ns   ; flt[8] ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.375 ns   ; flt[2] ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.373 ns   ; flt[8] ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.373 ns   ; flt[8] ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.368 ns   ; flt[2] ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.368 ns   ; flt[2] ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.325 ns   ; flt[1] ; Encoder:send|data_temp[15]     ; clk      ;
+; N/A                                     ; None                                                ; 6.306 ns   ; flt[5] ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.299 ns   ; flt[5] ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.299 ns   ; flt[5] ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.298 ns   ; SW[5]  ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.261 ns   ; SW[6]  ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.254 ns   ; SW[3]  ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.252 ns   ; SW[3]  ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.247 ns   ; flt[8] ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.246 ns   ; SW[3]  ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.242 ns   ; flt[2] ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.235 ns   ; flt[3] ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.201 ns   ; SW[1]  ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.173 ns   ; flt[5] ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.136 ns   ; flt[4] ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.136 ns   ; flt[1] ; LED_temp_err[5]                ; clk      ;
+; N/A                                     ; None                                                ; 6.129 ns   ; flt[4] ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.129 ns   ; flt[4] ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.128 ns   ; flt[1] ; LED_temp_err[7]                ; clk      ;
+; N/A                                     ; None                                                ; 6.115 ns   ; SW[4]  ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.046 ns   ; SW[2]  ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.044 ns   ; SW[2]  ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.038 ns   ; SW[2]  ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.008 ns   ; flt[6] ; LED_temp_err[2]                ; clk      ;
+; N/A                                     ; None                                                ; 6.003 ns   ; flt[4] ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 6.001 ns   ; flt[6] ; LED_temp_err[4]                ; clk      ;
+; N/A                                     ; None                                                ; 5.965 ns   ; SW[5]  ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.958 ns   ; SW[5]  ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.958 ns   ; SW[5]  ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.935 ns   ; flt[6] ; Encoder:send|data_temp[15]     ; clk      ;
+; N/A                                     ; None                                                ; 5.902 ns   ; flt[3] ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.895 ns   ; flt[3] ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.895 ns   ; flt[3] ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.868 ns   ; SW[1]  ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.861 ns   ; SW[1]  ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.861 ns   ; SW[1]  ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.849 ns   ; SW[8]  ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.847 ns   ; SW[8]  ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.841 ns   ; SW[8]  ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.832 ns   ; SW[5]  ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.809 ns   ; SW[3]  ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.806 ns   ; flt[8] ; LED_temp_err[2]                ; clk      ;
+; N/A                                     ; None                                                ; 5.801 ns   ; flt[2] ; LED_temp_err[2]                ; clk      ;
+; N/A                                     ; None                                                ; 5.799 ns   ; flt[8] ; LED_temp_err[4]                ; clk      ;
+; N/A                                     ; None                                                ; 5.794 ns   ; flt[2] ; LED_temp_err[4]                ; clk      ;
+; N/A                                     ; None                                                ; 5.782 ns   ; SW[4]  ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.775 ns   ; SW[4]  ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.775 ns   ; SW[4]  ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.769 ns   ; flt[3] ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.747 ns   ; flt[7] ; LED_temp_err[3]                ; clk      ;
+; N/A                                     ; None                                                ; 5.746 ns   ; flt[6] ; LED_temp_err[5]                ; clk      ;
+; N/A                                     ; None                                                ; 5.738 ns   ; flt[6] ; LED_temp_err[7]                ; clk      ;
+; N/A                                     ; None                                                ; 5.735 ns   ; SW[1]  ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.733 ns   ; flt[8] ; Encoder:send|data_temp[15]     ; clk      ;
+; N/A                                     ; None                                                ; 5.732 ns   ; flt[5] ; LED_temp_err[2]                ; clk      ;
+; N/A                                     ; None                                                ; 5.728 ns   ; flt[2] ; Encoder:send|data_temp[15]     ; clk      ;
+; N/A                                     ; None                                                ; 5.725 ns   ; flt[5] ; LED_temp_err[4]                ; clk      ;
+; N/A                                     ; None                                                ; 5.716 ns   ; flt[7] ; LED_temp_err[8]                ; clk      ;
+; N/A                                     ; None                                                ; 5.712 ns   ; flt[7] ; LED_temp_err[6]                ; clk      ;
+; N/A                                     ; None                                                ; 5.659 ns   ; flt[5] ; Encoder:send|data_temp[15]     ; clk      ;
+; N/A                                     ; None                                                ; 5.649 ns   ; SW[4]  ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.645 ns   ; flt[7] ; LED_temp_err[1]                ; clk      ;
+; N/A                                     ; None                                                ; 5.601 ns   ; SW[2]  ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.562 ns   ; flt[4] ; LED_temp_err[2]                ; clk      ;
+; N/A                                     ; None                                                ; 5.555 ns   ; flt[4] ; LED_temp_err[4]                ; clk      ;
+; N/A                                     ; None                                                ; 5.544 ns   ; flt[8] ; LED_temp_err[5]                ; clk      ;
+; N/A                                     ; None                                                ; 5.539 ns   ; flt[2] ; LED_temp_err[5]                ; clk      ;
+; N/A                                     ; None                                                ; 5.536 ns   ; flt[8] ; LED_temp_err[7]                ; clk      ;
+; N/A                                     ; None                                                ; 5.531 ns   ; flt[2] ; LED_temp_err[7]                ; clk      ;
+; N/A                                     ; None                                                ; 5.489 ns   ; flt[4] ; Encoder:send|data_temp[15]     ; clk      ;
+; N/A                                     ; None                                                ; 5.476 ns   ; SW[3]  ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.470 ns   ; flt[5] ; LED_temp_err[5]                ; clk      ;
+; N/A                                     ; None                                                ; 5.469 ns   ; SW[3]  ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.469 ns   ; SW[3]  ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.462 ns   ; flt[5] ; LED_temp_err[7]                ; clk      ;
+; N/A                                     ; None                                                ; 5.404 ns   ; SW[8]  ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.383 ns   ; flt[1] ; LED_temp_err[3]                ; clk      ;
+; N/A                                     ; None                                                ; 5.352 ns   ; flt[1] ; LED_temp_err[8]                ; clk      ;
+; N/A                                     ; None                                                ; 5.348 ns   ; flt[1] ; LED_temp_err[6]                ; clk      ;
+; N/A                                     ; None                                                ; 5.343 ns   ; SW[3]  ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.328 ns   ; flt[3] ; LED_temp_err[2]                ; clk      ;
+; N/A                                     ; None                                                ; 5.321 ns   ; flt[3] ; LED_temp_err[4]                ; clk      ;
+; N/A                                     ; None                                                ; 5.300 ns   ; flt[4] ; LED_temp_err[5]                ; clk      ;
+; N/A                                     ; None                                                ; 5.292 ns   ; flt[4] ; LED_temp_err[7]                ; clk      ;
+; N/A                                     ; None                                                ; 5.281 ns   ; flt[1] ; LED_temp_err[1]                ; clk      ;
+; N/A                                     ; None                                                ; 5.268 ns   ; SW[2]  ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.261 ns   ; SW[2]  ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.261 ns   ; SW[2]  ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.255 ns   ; flt[3] ; Encoder:send|data_temp[15]     ; clk      ;
+; N/A                                     ; None                                                ; 5.135 ns   ; SW[2]  ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.071 ns   ; SW[8]  ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.066 ns   ; flt[3] ; LED_temp_err[5]                ; clk      ;
+; N/A                                     ; None                                                ; 5.064 ns   ; SW[8]  ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.064 ns   ; SW[8]  ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 5.058 ns   ; flt[3] ; LED_temp_err[7]                ; clk      ;
+; N/A                                     ; None                                                ; 4.993 ns   ; flt[6] ; LED_temp_err[3]                ; clk      ;
+; N/A                                     ; None                                                ; 4.962 ns   ; flt[6] ; LED_temp_err[8]                ; clk      ;
+; N/A                                     ; None                                                ; 4.958 ns   ; flt[6] ; LED_temp_err[6]                ; clk      ;
+; N/A                                     ; None                                                ; 4.938 ns   ; SW[8]  ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 4.891 ns   ; flt[6] ; LED_temp_err[1]                ; clk      ;
+; N/A                                     ; None                                                ; 4.791 ns   ; flt[8] ; LED_temp_err[3]                ; clk      ;
+; N/A                                     ; None                                                ; 4.786 ns   ; flt[2] ; LED_temp_err[3]                ; clk      ;
+; N/A                                     ; None                                                ; 4.760 ns   ; flt[8] ; LED_temp_err[8]                ; clk      ;
+; N/A                                     ; None                                                ; 4.756 ns   ; flt[8] ; LED_temp_err[6]                ; clk      ;
+; N/A                                     ; None                                                ; 4.755 ns   ; flt[2] ; LED_temp_err[8]                ; clk      ;
+; N/A                                     ; None                                                ; 4.751 ns   ; flt[2] ; LED_temp_err[6]                ; clk      ;
+; N/A                                     ; None                                                ; 4.717 ns   ; flt[5] ; LED_temp_err[3]                ; clk      ;
+; N/A                                     ; None                                                ; 4.689 ns   ; flt[8] ; LED_temp_err[1]                ; clk      ;
+; N/A                                     ; None                                                ; 4.686 ns   ; flt[5] ; LED_temp_err[8]                ; clk      ;
+; N/A                                     ; None                                                ; 4.684 ns   ; flt[2] ; LED_temp_err[1]                ; clk      ;
+; N/A                                     ; None                                                ; 4.682 ns   ; flt[5] ; LED_temp_err[6]                ; clk      ;
+; N/A                                     ; None                                                ; 4.615 ns   ; flt[5] ; LED_temp_err[1]                ; clk      ;
+; N/A                                     ; None                                                ; 4.547 ns   ; flt[4] ; LED_temp_err[3]                ; clk      ;
+; N/A                                     ; None                                                ; 4.545 ns   ; SW[7]  ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 4.543 ns   ; SW[7]  ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 4.537 ns   ; SW[7]  ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 4.516 ns   ; flt[4] ; LED_temp_err[8]                ; clk      ;
+; N/A                                     ; None                                                ; 4.512 ns   ; flt[4] ; LED_temp_err[6]                ; clk      ;
+; N/A                                     ; None                                                ; 4.445 ns   ; flt[4] ; LED_temp_err[1]                ; clk      ;
+; N/A                                     ; None                                                ; 4.313 ns   ; flt[3] ; LED_temp_err[3]                ; clk      ;
+; N/A                                     ; None                                                ; 4.282 ns   ; flt[3] ; LED_temp_err[8]                ; clk      ;
+; N/A                                     ; None                                                ; 4.278 ns   ; flt[3] ; LED_temp_err[6]                ; clk      ;
+; N/A                                     ; None                                                ; 4.211 ns   ; flt[3] ; LED_temp_err[1]                ; clk      ;
+; N/A                                     ; None                                                ; 4.100 ns   ; SW[7]  ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 3.767 ns   ; SW[7]  ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 3.767 ns   ; reset  ; Decoder:receive|counter2_start ; clk      ;
+; N/A                                     ; None                                                ; 3.760 ns   ; SW[7]  ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; 3.760 ns   ; SW[7]  ; LED[3]~reg0                    ; clk      ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;        ;                                ;          ;
++-----------------------------------------+-----------------------------------------------------+------------+--------+--------------------------------+----------+
+
+
++--------------------------------------------------------------------------------------+
+; tco                                                                                  ;
++-------+--------------+------------+--------------------------+----------+------------+
+; Slack ; Required tco ; Actual tco ; From                     ; To       ; From Clock ;
++-------+--------------+------------+--------------------------+----------+------------+
+; N/A   ; None         ; 12.478 ns  ; Decoder:receive|err_com  ; pwmn[3]  ; clk        ;
+; N/A   ; None         ; 12.409 ns  ; Decoder:receive|err_com  ; pwma[3]  ; clk        ;
+; N/A   ; None         ; 11.962 ns  ; Decoder:receive|data[5]  ; pwmn[6]  ; clk        ;
+; N/A   ; None         ; 11.962 ns  ; Decoder:receive|data[5]  ; pwma[6]  ; clk        ;
+; N/A   ; None         ; 11.939 ns  ; Decoder:receive|data[4]  ; pwmn[3]  ; clk        ;
+; N/A   ; None         ; 11.870 ns  ; Decoder:receive|data[4]  ; pwma[3]  ; clk        ;
+; N/A   ; None         ; 11.818 ns  ; delay:PWM_delay5|pwm_out ; pwmn[6]  ; clk        ;
+; N/A   ; None         ; 11.818 ns  ; delay:PWM_delay5|pwm_out ; pwma[6]  ; clk        ;
+; N/A   ; None         ; 11.649 ns  ; delay:PWM_delay6|pwm_out ; pwmn[7]  ; clk        ;
+; N/A   ; None         ; 11.649 ns  ; delay:PWM_delay6|pwm_out ; pwma[7]  ; clk        ;
+; N/A   ; None         ; 11.531 ns  ; Decoder:receive|err_com  ; pwmn[2]  ; clk        ;
+; N/A   ; None         ; 11.531 ns  ; Decoder:receive|err_com  ; pwma[2]  ; clk        ;
+; N/A   ; None         ; 11.391 ns  ; Decoder:receive|data[5]  ; pwmn[3]  ; clk        ;
+; N/A   ; None         ; 11.322 ns  ; Decoder:receive|data[5]  ; pwma[3]  ; clk        ;
+; N/A   ; None         ; 11.243 ns  ; Decoder:receive|data[5]  ; pwmn[5]  ; clk        ;
+; N/A   ; None         ; 11.243 ns  ; Decoder:receive|data[5]  ; pwma[5]  ; clk        ;
+; N/A   ; None         ; 11.190 ns  ; Decoder:receive|err_com  ; pwmn[7]  ; clk        ;
+; N/A   ; None         ; 11.190 ns  ; Decoder:receive|err_com  ; pwma[7]  ; clk        ;
+; N/A   ; None         ; 11.141 ns  ; Decoder:receive|data[5]  ; pwmn[1]  ; clk        ;
+; N/A   ; None         ; 11.141 ns  ; Decoder:receive|data[5]  ; pwma[1]  ; clk        ;
+; N/A   ; None         ; 11.111 ns  ; Decoder:receive|err_com  ; pwmn[6]  ; clk        ;
+; N/A   ; None         ; 11.111 ns  ; Decoder:receive|err_com  ; pwma[6]  ; clk        ;
+; N/A   ; None         ; 10.993 ns  ; delay:PWM_delay1|pwm_out ; pwmn[1]  ; clk        ;
+; N/A   ; None         ; 10.993 ns  ; delay:PWM_delay1|pwm_out ; pwma[1]  ; clk        ;
+; N/A   ; None         ; 10.992 ns  ; Decoder:receive|data[4]  ; pwmn[2]  ; clk        ;
+; N/A   ; None         ; 10.992 ns  ; Decoder:receive|data[4]  ; pwma[2]  ; clk        ;
+; N/A   ; None         ; 10.957 ns  ; Decoder:receive|err_com  ; state    ; clk        ;
+; N/A   ; None         ; 10.953 ns  ; Decoder:receive|data[4]  ; pwma[4]  ; clk        ;
+; N/A   ; None         ; 10.944 ns  ; Decoder:receive|data[4]  ; pwmn[8]  ; clk        ;
+; N/A   ; None         ; 10.944 ns  ; Decoder:receive|data[4]  ; pwma[8]  ; clk        ;
+; N/A   ; None         ; 10.787 ns  ; Decoder:receive|err_com  ; pwma[4]  ; clk        ;
+; N/A   ; None         ; 10.776 ns  ; Decoder:receive|err_com  ; pwmn[8]  ; clk        ;
+; N/A   ; None         ; 10.776 ns  ; Decoder:receive|err_com  ; pwma[8]  ; clk        ;
+; N/A   ; None         ; 10.746 ns  ; Decoder:receive|data[4]  ; io[1]    ; clk        ;
+; N/A   ; None         ; 10.603 ns  ; Decoder:receive|err_com  ; pwmn[1]  ; clk        ;
+; N/A   ; None         ; 10.603 ns  ; Decoder:receive|err_com  ; pwma[1]  ; clk        ;
+; N/A   ; None         ; 10.596 ns  ; delay:PWM_delay2|pwm_out ; pwma[4]  ; clk        ;
+; N/A   ; None         ; 10.577 ns  ; delay:PWM_delay1|pwm_out ; pwmn[3]  ; clk        ;
+; N/A   ; None         ; 10.566 ns  ; delay:PWM_delay4|pwm_out ; pwmn[8]  ; clk        ;
+; N/A   ; None         ; 10.566 ns  ; delay:PWM_delay4|pwm_out ; pwma[8]  ; clk        ;
+; N/A   ; None         ; 10.508 ns  ; delay:PWM_delay1|pwm_out ; pwma[3]  ; clk        ;
+; N/A   ; None         ; 10.507 ns  ; Encoder:send|pulse       ; data_out ; clk        ;
+; N/A   ; None         ; 10.444 ns  ; Decoder:receive|data[5]  ; pwmn[2]  ; clk        ;
+; N/A   ; None         ; 10.444 ns  ; Decoder:receive|data[5]  ; pwma[2]  ; clk        ;
+; N/A   ; None         ; 10.389 ns  ; Decoder:receive|data[1]  ; io[4]    ; clk        ;
+; N/A   ; None         ; 10.327 ns  ; delay:PWM_delay3|pwm_out ; pwmn[5]  ; clk        ;
+; N/A   ; None         ; 10.327 ns  ; delay:PWM_delay3|pwm_out ; pwma[5]  ; clk        ;
+; N/A   ; None         ; 10.284 ns  ; LED[5]~reg0              ; LED[5]   ; clk        ;
+; N/A   ; None         ; 10.182 ns  ; Decoder:receive|err_com  ; pwmn[5]  ; clk        ;
+; N/A   ; None         ; 10.182 ns  ; Decoder:receive|err_com  ; pwma[5]  ; clk        ;
+; N/A   ; None         ; 9.955 ns   ; Decoder:receive|data[4]  ; pwmn[4]  ; clk        ;
+; N/A   ; None         ; 9.858 ns   ; delay:PWM_delay2|pwm_out ; pwmn[2]  ; clk        ;
+; N/A   ; None         ; 9.858 ns   ; delay:PWM_delay2|pwm_out ; pwma[2]  ; clk        ;
+; N/A   ; None         ; 9.789 ns   ; Decoder:receive|err_com  ; pwmn[4]  ; clk        ;
+; N/A   ; None         ; 9.649 ns   ; LED[2]~reg0              ; LED[2]   ; clk        ;
+; N/A   ; None         ; 9.598 ns   ; delay:PWM_delay2|pwm_out ; pwmn[4]  ; clk        ;
+; N/A   ; None         ; 9.529 ns   ; Decoder:receive|data[4]  ; pwmn[7]  ; clk        ;
+; N/A   ; None         ; 9.529 ns   ; Decoder:receive|data[4]  ; pwma[7]  ; clk        ;
+; N/A   ; None         ; 9.215 ns   ; LED[4]~reg0              ; LED[4]   ; clk        ;
+; N/A   ; None         ; 9.149 ns   ; Decoder:receive|data[3]  ; io[2]    ; clk        ;
+; N/A   ; None         ; 9.116 ns   ; LED[1]~reg0              ; LED[1]   ; clk        ;
+; N/A   ; None         ; 9.113 ns   ; AD_clk~reg0              ; AD_clk   ; clk        ;
+; N/A   ; None         ; 9.070 ns   ; LED[6]~reg0              ; LED[6]   ; clk        ;
+; N/A   ; None         ; 9.052 ns   ; LED[7]~reg0              ; LED[7]   ; clk        ;
+; N/A   ; None         ; 9.052 ns   ; LED[3]~reg0              ; LED[3]   ; clk        ;
+; N/A   ; None         ; 9.047 ns   ; LED[8]~reg0              ; LED[8]   ; clk        ;
+; N/A   ; None         ; 8.988 ns   ; Decoder:receive|data[2]  ; io[3]    ; clk        ;
++-------+--------------+------------+--------------------------+----------+------------+
+
+
++----------------------------------------------------------------+
+; tpd                                                            ;
++-------+-------------------+-----------------+--------+---------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From   ; To      ;
++-------+-------------------+-----------------+--------+---------+
+; N/A   ; None              ; 12.318 ns       ; flt[7] ; pwma[4] ;
+; N/A   ; None              ; 12.310 ns       ; flt[7] ; pwmn[8] ;
+; N/A   ; None              ; 12.310 ns       ; flt[7] ; pwma[8] ;
+; N/A   ; None              ; 12.268 ns       ; flt[7] ; pwmn[3] ;
+; N/A   ; None              ; 12.199 ns       ; flt[7] ; pwma[3] ;
+; N/A   ; None              ; 12.135 ns       ; flt[7] ; pwmn[7] ;
+; N/A   ; None              ; 12.135 ns       ; flt[7] ; pwma[7] ;
+; N/A   ; None              ; 11.957 ns       ; flt[7] ; pwmn[6] ;
+; N/A   ; None              ; 11.957 ns       ; flt[7] ; pwma[6] ;
+; N/A   ; None              ; 11.954 ns       ; flt[1] ; pwma[4] ;
+; N/A   ; None              ; 11.946 ns       ; flt[1] ; pwmn[8] ;
+; N/A   ; None              ; 11.946 ns       ; flt[1] ; pwma[8] ;
+; N/A   ; None              ; 11.904 ns       ; flt[1] ; pwmn[3] ;
+; N/A   ; None              ; 11.835 ns       ; flt[1] ; pwma[3] ;
+; N/A   ; None              ; 11.808 ns       ; flt[7] ; state   ;
+; N/A   ; None              ; 11.771 ns       ; flt[1] ; pwmn[7] ;
+; N/A   ; None              ; 11.771 ns       ; flt[1] ; pwma[7] ;
+; N/A   ; None              ; 11.754 ns       ; flt[7] ; pwmn[5] ;
+; N/A   ; None              ; 11.754 ns       ; flt[7] ; pwma[5] ;
+; N/A   ; None              ; 11.593 ns       ; flt[1] ; pwmn[6] ;
+; N/A   ; None              ; 11.593 ns       ; flt[1] ; pwma[6] ;
+; N/A   ; None              ; 11.580 ns       ; flt[7] ; pwmn[2] ;
+; N/A   ; None              ; 11.580 ns       ; flt[7] ; pwma[2] ;
+; N/A   ; None              ; 11.564 ns       ; flt[6] ; pwma[4] ;
+; N/A   ; None              ; 11.559 ns       ; flt[7] ; pwmn[1] ;
+; N/A   ; None              ; 11.559 ns       ; flt[7] ; pwma[1] ;
+; N/A   ; None              ; 11.556 ns       ; flt[6] ; pwmn[8] ;
+; N/A   ; None              ; 11.556 ns       ; flt[6] ; pwma[8] ;
+; N/A   ; None              ; 11.514 ns       ; flt[6] ; pwmn[3] ;
+; N/A   ; None              ; 11.445 ns       ; flt[6] ; pwma[3] ;
+; N/A   ; None              ; 11.444 ns       ; flt[1] ; state   ;
+; N/A   ; None              ; 11.390 ns       ; flt[1] ; pwmn[5] ;
+; N/A   ; None              ; 11.390 ns       ; flt[1] ; pwma[5] ;
+; N/A   ; None              ; 11.381 ns       ; flt[6] ; pwmn[7] ;
+; N/A   ; None              ; 11.381 ns       ; flt[6] ; pwma[7] ;
+; N/A   ; None              ; 11.362 ns       ; flt[8] ; pwma[4] ;
+; N/A   ; None              ; 11.357 ns       ; flt[2] ; pwma[4] ;
+; N/A   ; None              ; 11.354 ns       ; flt[8] ; pwmn[8] ;
+; N/A   ; None              ; 11.354 ns       ; flt[8] ; pwma[8] ;
+; N/A   ; None              ; 11.349 ns       ; flt[2] ; pwmn[8] ;
+; N/A   ; None              ; 11.349 ns       ; flt[2] ; pwma[8] ;
+; N/A   ; None              ; 11.320 ns       ; flt[7] ; pwmn[4] ;
+; N/A   ; None              ; 11.312 ns       ; flt[8] ; pwmn[3] ;
+; N/A   ; None              ; 11.307 ns       ; flt[2] ; pwmn[3] ;
+; N/A   ; None              ; 11.288 ns       ; flt[5] ; pwma[4] ;
+; N/A   ; None              ; 11.280 ns       ; flt[5] ; pwmn[8] ;
+; N/A   ; None              ; 11.280 ns       ; flt[5] ; pwma[8] ;
+; N/A   ; None              ; 11.243 ns       ; flt[8] ; pwma[3] ;
+; N/A   ; None              ; 11.238 ns       ; flt[5] ; pwmn[3] ;
+; N/A   ; None              ; 11.238 ns       ; flt[2] ; pwma[3] ;
+; N/A   ; None              ; 11.216 ns       ; flt[1] ; pwmn[2] ;
+; N/A   ; None              ; 11.216 ns       ; flt[1] ; pwma[2] ;
+; N/A   ; None              ; 11.203 ns       ; flt[6] ; pwmn[6] ;
+; N/A   ; None              ; 11.203 ns       ; flt[6] ; pwma[6] ;
+; N/A   ; None              ; 11.195 ns       ; flt[1] ; pwmn[1] ;
+; N/A   ; None              ; 11.195 ns       ; flt[1] ; pwma[1] ;
+; N/A   ; None              ; 11.179 ns       ; flt[8] ; pwmn[7] ;
+; N/A   ; None              ; 11.179 ns       ; flt[8] ; pwma[7] ;
+; N/A   ; None              ; 11.174 ns       ; flt[2] ; pwmn[7] ;
+; N/A   ; None              ; 11.174 ns       ; flt[2] ; pwma[7] ;
+; N/A   ; None              ; 11.169 ns       ; flt[5] ; pwma[3] ;
+; N/A   ; None              ; 11.118 ns       ; flt[4] ; pwma[4] ;
+; N/A   ; None              ; 11.110 ns       ; flt[4] ; pwmn[8] ;
+; N/A   ; None              ; 11.110 ns       ; flt[4] ; pwma[8] ;
+; N/A   ; None              ; 11.105 ns       ; flt[5] ; pwmn[7] ;
+; N/A   ; None              ; 11.105 ns       ; flt[5] ; pwma[7] ;
+; N/A   ; None              ; 11.068 ns       ; flt[4] ; pwmn[3] ;
+; N/A   ; None              ; 11.054 ns       ; flt[6] ; state   ;
+; N/A   ; None              ; 11.001 ns       ; flt[8] ; pwmn[6] ;
+; N/A   ; None              ; 11.001 ns       ; flt[8] ; pwma[6] ;
+; N/A   ; None              ; 11.000 ns       ; flt[6] ; pwmn[5] ;
+; N/A   ; None              ; 11.000 ns       ; flt[6] ; pwma[5] ;
+; N/A   ; None              ; 10.999 ns       ; flt[4] ; pwma[3] ;
+; N/A   ; None              ; 10.996 ns       ; flt[2] ; pwmn[6] ;
+; N/A   ; None              ; 10.996 ns       ; flt[2] ; pwma[6] ;
+; N/A   ; None              ; 10.956 ns       ; flt[1] ; pwmn[4] ;
+; N/A   ; None              ; 10.935 ns       ; flt[4] ; pwmn[7] ;
+; N/A   ; None              ; 10.935 ns       ; flt[4] ; pwma[7] ;
+; N/A   ; None              ; 10.927 ns       ; flt[5] ; pwmn[6] ;
+; N/A   ; None              ; 10.927 ns       ; flt[5] ; pwma[6] ;
+; N/A   ; None              ; 10.884 ns       ; flt[3] ; pwma[4] ;
+; N/A   ; None              ; 10.876 ns       ; flt[3] ; pwmn[8] ;
+; N/A   ; None              ; 10.876 ns       ; flt[3] ; pwma[8] ;
+; N/A   ; None              ; 10.852 ns       ; flt[8] ; state   ;
+; N/A   ; None              ; 10.847 ns       ; flt[2] ; state   ;
+; N/A   ; None              ; 10.834 ns       ; flt[3] ; pwmn[3] ;
+; N/A   ; None              ; 10.826 ns       ; flt[6] ; pwmn[2] ;
+; N/A   ; None              ; 10.826 ns       ; flt[6] ; pwma[2] ;
+; N/A   ; None              ; 10.805 ns       ; flt[6] ; pwmn[1] ;
+; N/A   ; None              ; 10.805 ns       ; flt[6] ; pwma[1] ;
+; N/A   ; None              ; 10.798 ns       ; flt[8] ; pwmn[5] ;
+; N/A   ; None              ; 10.798 ns       ; flt[8] ; pwma[5] ;
+; N/A   ; None              ; 10.793 ns       ; flt[2] ; pwmn[5] ;
+; N/A   ; None              ; 10.793 ns       ; flt[2] ; pwma[5] ;
+; N/A   ; None              ; 10.778 ns       ; flt[5] ; state   ;
+; N/A   ; None              ; 10.765 ns       ; flt[3] ; pwma[3] ;
+; N/A   ; None              ; 10.757 ns       ; flt[4] ; pwmn[6] ;
+; N/A   ; None              ; 10.757 ns       ; flt[4] ; pwma[6] ;
+; N/A   ; None              ; 10.724 ns       ; flt[5] ; pwmn[5] ;
+; N/A   ; None              ; 10.724 ns       ; flt[5] ; pwma[5] ;
+; N/A   ; None              ; 10.701 ns       ; flt[3] ; pwmn[7] ;
+; N/A   ; None              ; 10.701 ns       ; flt[3] ; pwma[7] ;
+; N/A   ; None              ; 10.624 ns       ; flt[8] ; pwmn[2] ;
+; N/A   ; None              ; 10.624 ns       ; flt[8] ; pwma[2] ;
+; N/A   ; None              ; 10.619 ns       ; flt[2] ; pwmn[2] ;
+; N/A   ; None              ; 10.619 ns       ; flt[2] ; pwma[2] ;
+; N/A   ; None              ; 10.608 ns       ; flt[4] ; state   ;
+; N/A   ; None              ; 10.603 ns       ; flt[8] ; pwmn[1] ;
+; N/A   ; None              ; 10.603 ns       ; flt[8] ; pwma[1] ;
+; N/A   ; None              ; 10.598 ns       ; flt[2] ; pwmn[1] ;
+; N/A   ; None              ; 10.598 ns       ; flt[2] ; pwma[1] ;
+; N/A   ; None              ; 10.566 ns       ; flt[6] ; pwmn[4] ;
+; N/A   ; None              ; 10.554 ns       ; flt[4] ; pwmn[5] ;
+; N/A   ; None              ; 10.554 ns       ; flt[4] ; pwma[5] ;
+; N/A   ; None              ; 10.550 ns       ; flt[5] ; pwmn[2] ;
+; N/A   ; None              ; 10.550 ns       ; flt[5] ; pwma[2] ;
+; N/A   ; None              ; 10.529 ns       ; flt[5] ; pwmn[1] ;
+; N/A   ; None              ; 10.529 ns       ; flt[5] ; pwma[1] ;
+; N/A   ; None              ; 10.523 ns       ; flt[3] ; pwmn[6] ;
+; N/A   ; None              ; 10.523 ns       ; flt[3] ; pwma[6] ;
+; N/A   ; None              ; 10.380 ns       ; flt[4] ; pwmn[2] ;
+; N/A   ; None              ; 10.380 ns       ; flt[4] ; pwma[2] ;
+; N/A   ; None              ; 10.374 ns       ; flt[3] ; state   ;
+; N/A   ; None              ; 10.364 ns       ; flt[8] ; pwmn[4] ;
+; N/A   ; None              ; 10.359 ns       ; flt[2] ; pwmn[4] ;
+; N/A   ; None              ; 10.359 ns       ; flt[4] ; pwmn[1] ;
+; N/A   ; None              ; 10.359 ns       ; flt[4] ; pwma[1] ;
+; N/A   ; None              ; 10.320 ns       ; flt[3] ; pwmn[5] ;
+; N/A   ; None              ; 10.320 ns       ; flt[3] ; pwma[5] ;
+; N/A   ; None              ; 10.290 ns       ; flt[5] ; pwmn[4] ;
+; N/A   ; None              ; 10.146 ns       ; flt[3] ; pwmn[2] ;
+; N/A   ; None              ; 10.146 ns       ; flt[3] ; pwma[2] ;
+; N/A   ; None              ; 10.125 ns       ; flt[3] ; pwmn[1] ;
+; N/A   ; None              ; 10.125 ns       ; flt[3] ; pwma[1] ;
+; N/A   ; None              ; 10.120 ns       ; flt[4] ; pwmn[4] ;
+; N/A   ; None              ; 9.886 ns        ; flt[3] ; pwmn[4] ;
++-------+-------------------+-----------------+--------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                                                                 ;
++-----------------------------------------+-----------------------------------------------------+-----------+------------+--------------------------------+----------+
+; Minimum Slack                           ; Required th                                         ; Actual th ; From       ; To                             ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+-----------+------------+--------------------------------+----------+
+; N/A                                     ; None                                                ; -1.212 ns ; flt[5]     ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -1.276 ns ; AD_data[3] ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -1.327 ns ; AD_data[0] ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -1.328 ns ; flt[1]     ; LED_temp_err[1]                ; clk      ;
+; N/A                                     ; None                                                ; -1.384 ns ; flt[6]     ; LED_temp_err[6]                ; clk      ;
+; N/A                                     ; None                                                ; -1.395 ns ; pwm_in     ; Decoder:receive|pulse_last[1]  ; clk      ;
+; N/A                                     ; None                                                ; -1.447 ns ; AD_data[6] ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -1.476 ns ; pwm_in     ; Decoder:receive|data_temp[5]   ; clk      ;
+; N/A                                     ; None                                                ; -1.484 ns ; AD_data[7] ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -1.486 ns ; pwm_in     ; Decoder:receive|data_temp[1]   ; clk      ;
+; N/A                                     ; None                                                ; -1.489 ns ; AD_data[5] ; Encoder:send|data_temp[5]      ; clk      ;
+; N/A                                     ; None                                                ; -1.503 ns ; flt[2]     ; LED_temp_err[2]                ; clk      ;
+; N/A                                     ; None                                                ; -1.504 ns ; AD_data[6] ; Encoder:send|data_temp[6]      ; clk      ;
+; N/A                                     ; None                                                ; -1.505 ns ; AD_data[4] ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -1.508 ns ; AD_data[1] ; Encoder:send|data_temp[1]      ; clk      ;
+; N/A                                     ; None                                                ; -1.524 ns ; AD_data[4] ; Encoder:send|data_temp[4]      ; clk      ;
+; N/A                                     ; None                                                ; -1.608 ns ; flt[7]     ; LED_temp_err[7]                ; clk      ;
+; N/A                                     ; None                                                ; -1.636 ns ; flt[1]     ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -1.637 ns ; AD_data[8] ; Encoder:send|data_temp[8]      ; clk      ;
+; N/A                                     ; None                                                ; -1.685 ns ; AD_data[7] ; Encoder:send|data_temp[7]      ; clk      ;
+; N/A                                     ; None                                                ; -1.699 ns ; AD_data[5] ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -1.702 ns ; pwm_in     ; Decoder:receive|data_temp[2]   ; clk      ;
+; N/A                                     ; None                                                ; -1.706 ns ; pwm_in     ; Decoder:receive|data_temp[4]   ; clk      ;
+; N/A                                     ; None                                                ; -1.706 ns ; pwm_in     ; Decoder:receive|data_temp[3]   ; clk      ;
+; N/A                                     ; None                                                ; -1.708 ns ; flt[8]     ; LED_temp_err[8]                ; clk      ;
+; N/A                                     ; None                                                ; -1.729 ns ; AD_data[3] ; Encoder:send|data_temp[3]      ; clk      ;
+; N/A                                     ; None                                                ; -1.735 ns ; AD_data[0] ; Encoder:send|data_temp[0]      ; clk      ;
+; N/A                                     ; None                                                ; -1.738 ns ; AD_data[9] ; Encoder:send|data_temp[9]      ; clk      ;
+; N/A                                     ; None                                                ; -1.748 ns ; flt[4]     ; LED_temp_err[4]                ; clk      ;
+; N/A                                     ; None                                                ; -1.866 ns ; flt[4]     ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -1.878 ns ; AD_data[2] ; Encoder:send|data_temp[2]      ; clk      ;
+; N/A                                     ; None                                                ; -1.944 ns ; flt[5]     ; LED_temp_err[5]                ; clk      ;
+; N/A                                     ; None                                                ; -2.024 ns ; AD_data[2] ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -2.072 ns ; flt[3]     ; LED_temp_err[3]                ; clk      ;
+; N/A                                     ; None                                                ; -2.076 ns ; flt[3]     ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -2.164 ns ; flt[7]     ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -2.303 ns ; flt[2]     ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -2.328 ns ; flt[6]     ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -2.437 ns ; SW[8]      ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -2.438 ns ; AD_data[1] ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -2.634 ns ; SW[2]      ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -2.651 ns ; flt[8]     ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -2.842 ns ; SW[3]      ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.035 ns ; SW[8]      ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.080 ns ; SW[7]      ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.143 ns ; flt[3]     ; LED_temp_err[5]                ; clk      ;
+; N/A                                     ; None                                                ; -3.148 ns ; SW[4]      ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.154 ns ; SW[7]      ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.177 ns ; SW[7]      ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.206 ns ; SW[7]      ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.206 ns ; SW[7]      ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.213 ns ; reset      ; Decoder:receive|counter2_start ; clk      ;
+; N/A                                     ; None                                                ; -3.232 ns ; SW[2]      ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.234 ns ; SW[1]      ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.250 ns ; SW[8]      ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.331 ns ; SW[5]      ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.377 ns ; flt[4]     ; LED_temp_err[5]                ; clk      ;
+; N/A                                     ; None                                                ; -3.440 ns ; SW[3]      ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.447 ns ; SW[2]      ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.542 ns ; SW[8]      ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.616 ns ; flt[2]     ; LED_temp_err[5]                ; clk      ;
+; N/A                                     ; None                                                ; -3.621 ns ; flt[8]     ; LED_temp_err[5]                ; clk      ;
+; N/A                                     ; None                                                ; -3.655 ns ; SW[3]      ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.657 ns ; flt[3]     ; LED_temp_err[1]                ; clk      ;
+; N/A                                     ; None                                                ; -3.709 ns ; flt[3]     ; LED_temp_err[4]                ; clk      ;
+; N/A                                     ; None                                                ; -3.710 ns ; flt[3]     ; LED_temp_err[7]                ; clk      ;
+; N/A                                     ; None                                                ; -3.719 ns ; flt[3]     ; LED_temp_err[2]                ; clk      ;
+; N/A                                     ; None                                                ; -3.724 ns ; flt[3]     ; LED_temp_err[6]                ; clk      ;
+; N/A                                     ; None                                                ; -3.728 ns ; flt[3]     ; LED_temp_err[8]                ; clk      ;
+; N/A                                     ; None                                                ; -3.739 ns ; SW[2]      ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.746 ns ; SW[4]      ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.760 ns ; SW[6]      ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.811 ns ; SW[8]      ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.823 ns ; flt[6]     ; LED_temp_err[5]                ; clk      ;
+; N/A                                     ; None                                                ; -3.832 ns ; SW[1]      ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.891 ns ; flt[4]     ; LED_temp_err[1]                ; clk      ;
+; N/A                                     ; None                                                ; -3.920 ns ; SW[8]      ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.929 ns ; SW[5]      ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.944 ns ; flt[4]     ; LED_temp_err[7]                ; clk      ;
+; N/A                                     ; None                                                ; -3.947 ns ; SW[3]      ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.953 ns ; flt[4]     ; LED_temp_err[2]                ; clk      ;
+; N/A                                     ; None                                                ; -3.954 ns ; SW[7]      ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.957 ns ; SW[7]      ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.958 ns ; flt[4]     ; LED_temp_err[6]                ; clk      ;
+; N/A                                     ; None                                                ; -3.961 ns ; SW[4]      ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.962 ns ; flt[4]     ; LED_temp_err[8]                ; clk      ;
+; N/A                                     ; None                                                ; -3.983 ns ; SW[7]      ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -3.993 ns ; flt[4]     ; LED_temp_err[3]                ; clk      ;
+; N/A                                     ; None                                                ; -4.008 ns ; SW[2]      ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.047 ns ; SW[1]      ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.061 ns ; flt[5]     ; LED_temp_err[1]                ; clk      ;
+; N/A                                     ; None                                                ; -4.113 ns ; flt[5]     ; LED_temp_err[4]                ; clk      ;
+; N/A                                     ; None                                                ; -4.114 ns ; flt[5]     ; LED_temp_err[7]                ; clk      ;
+; N/A                                     ; None                                                ; -4.117 ns ; SW[2]      ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.123 ns ; flt[5]     ; LED_temp_err[2]                ; clk      ;
+; N/A                                     ; None                                                ; -4.128 ns ; flt[5]     ; LED_temp_err[6]                ; clk      ;
+; N/A                                     ; None                                                ; -4.130 ns ; flt[2]     ; LED_temp_err[1]                ; clk      ;
+; N/A                                     ; None                                                ; -4.132 ns ; flt[5]     ; LED_temp_err[8]                ; clk      ;
+; N/A                                     ; None                                                ; -4.135 ns ; flt[8]     ; LED_temp_err[1]                ; clk      ;
+; N/A                                     ; None                                                ; -4.144 ns ; SW[5]      ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.163 ns ; flt[5]     ; LED_temp_err[3]                ; clk      ;
+; N/A                                     ; None                                                ; -4.182 ns ; flt[2]     ; LED_temp_err[4]                ; clk      ;
+; N/A                                     ; None                                                ; -4.183 ns ; flt[2]     ; LED_temp_err[7]                ; clk      ;
+; N/A                                     ; None                                                ; -4.187 ns ; flt[8]     ; LED_temp_err[4]                ; clk      ;
+; N/A                                     ; None                                                ; -4.188 ns ; flt[8]     ; LED_temp_err[7]                ; clk      ;
+; N/A                                     ; None                                                ; -4.197 ns ; flt[8]     ; LED_temp_err[2]                ; clk      ;
+; N/A                                     ; None                                                ; -4.197 ns ; flt[2]     ; LED_temp_err[6]                ; clk      ;
+; N/A                                     ; None                                                ; -4.201 ns ; flt[2]     ; LED_temp_err[8]                ; clk      ;
+; N/A                                     ; None                                                ; -4.202 ns ; flt[8]     ; LED_temp_err[6]                ; clk      ;
+; N/A                                     ; None                                                ; -4.213 ns ; flt[1]     ; LED_temp_err[5]                ; clk      ;
+; N/A                                     ; None                                                ; -4.216 ns ; SW[3]      ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.232 ns ; flt[2]     ; LED_temp_err[3]                ; clk      ;
+; N/A                                     ; None                                                ; -4.237 ns ; flt[8]     ; LED_temp_err[3]                ; clk      ;
+; N/A                                     ; None                                                ; -4.253 ns ; SW[4]      ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.277 ns ; SW[8]      ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.325 ns ; SW[3]      ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.337 ns ; flt[6]     ; LED_temp_err[1]                ; clk      ;
+; N/A                                     ; None                                                ; -4.339 ns ; SW[1]      ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.358 ns ; SW[6]      ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.389 ns ; flt[6]     ; LED_temp_err[4]                ; clk      ;
+; N/A                                     ; None                                                ; -4.390 ns ; flt[6]     ; LED_temp_err[7]                ; clk      ;
+; N/A                                     ; None                                                ; -4.399 ns ; flt[6]     ; LED_temp_err[2]                ; clk      ;
+; N/A                                     ; None                                                ; -4.408 ns ; flt[6]     ; LED_temp_err[8]                ; clk      ;
+; N/A                                     ; None                                                ; -4.436 ns ; SW[5]      ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.439 ns ; flt[6]     ; LED_temp_err[3]                ; clk      ;
+; N/A                                     ; None                                                ; -4.474 ns ; SW[2]      ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.482 ns ; SW[8]      ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.522 ns ; SW[4]      ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.573 ns ; SW[6]      ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.577 ns ; flt[7]     ; LED_temp_err[5]                ; clk      ;
+; N/A                                     ; None                                                ; -4.608 ns ; SW[1]      ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.631 ns ; SW[4]      ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.679 ns ; SW[2]      ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.682 ns ; SW[3]      ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.701 ns ; flt[3]     ; Encoder:send|data_temp[15]     ; clk      ;
+; N/A                                     ; None                                                ; -4.705 ns ; SW[5]      ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.717 ns ; SW[1]      ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.779 ns ; flt[1]     ; LED_temp_err[4]                ; clk      ;
+; N/A                                     ; None                                                ; -4.780 ns ; flt[1]     ; LED_temp_err[7]                ; clk      ;
+; N/A                                     ; None                                                ; -4.789 ns ; flt[1]     ; LED_temp_err[2]                ; clk      ;
+; N/A                                     ; None                                                ; -4.794 ns ; flt[1]     ; LED_temp_err[6]                ; clk      ;
+; N/A                                     ; None                                                ; -4.798 ns ; flt[1]     ; LED_temp_err[8]                ; clk      ;
+; N/A                                     ; None                                                ; -4.814 ns ; SW[5]      ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.829 ns ; flt[1]     ; LED_temp_err[3]                ; clk      ;
+; N/A                                     ; None                                                ; -4.865 ns ; SW[6]      ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.887 ns ; SW[3]      ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -4.935 ns ; flt[4]     ; Encoder:send|data_temp[15]     ; clk      ;
+; N/A                                     ; None                                                ; -4.988 ns ; SW[4]      ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.074 ns ; SW[1]      ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.091 ns ; flt[7]     ; LED_temp_err[1]                ; clk      ;
+; N/A                                     ; None                                                ; -5.105 ns ; flt[5]     ; Encoder:send|data_temp[15]     ; clk      ;
+; N/A                                     ; None                                                ; -5.134 ns ; SW[6]      ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.143 ns ; flt[7]     ; LED_temp_err[4]                ; clk      ;
+; N/A                                     ; None                                                ; -5.153 ns ; flt[7]     ; LED_temp_err[2]                ; clk      ;
+; N/A                                     ; None                                                ; -5.158 ns ; flt[7]     ; LED_temp_err[6]                ; clk      ;
+; N/A                                     ; None                                                ; -5.162 ns ; flt[7]     ; LED_temp_err[8]                ; clk      ;
+; N/A                                     ; None                                                ; -5.171 ns ; SW[5]      ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.174 ns ; flt[2]     ; Encoder:send|data_temp[15]     ; clk      ;
+; N/A                                     ; None                                                ; -5.179 ns ; flt[8]     ; Encoder:send|data_temp[15]     ; clk      ;
+; N/A                                     ; None                                                ; -5.193 ns ; SW[4]      ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.193 ns ; flt[7]     ; LED_temp_err[3]                ; clk      ;
+; N/A                                     ; None                                                ; -5.215 ns ; flt[3]     ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.243 ns ; SW[6]      ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.279 ns ; SW[1]      ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.289 ns ; flt[3]     ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.312 ns ; flt[3]     ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.341 ns ; flt[3]     ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.376 ns ; SW[5]      ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.381 ns ; flt[6]     ; Encoder:send|data_temp[15]     ; clk      ;
+; N/A                                     ; None                                                ; -5.449 ns ; flt[4]     ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.523 ns ; flt[4]     ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.575 ns ; flt[4]     ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.575 ns ; flt[4]     ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.600 ns ; SW[6]      ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.688 ns ; flt[2]     ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.693 ns ; flt[8]     ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.693 ns ; flt[5]     ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.716 ns ; flt[5]     ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.745 ns ; flt[5]     ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.745 ns ; flt[5]     ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.767 ns ; flt[8]     ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.771 ns ; flt[1]     ; Encoder:send|data_temp[15]     ; clk      ;
+; N/A                                     ; None                                                ; -5.785 ns ; flt[2]     ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.790 ns ; flt[8]     ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.805 ns ; SW[6]      ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.814 ns ; flt[2]     ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.814 ns ; flt[2]     ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.819 ns ; flt[8]     ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.819 ns ; flt[8]     ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.895 ns ; flt[6]     ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.969 ns ; flt[6]     ; LED[2]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -5.992 ns ; flt[6]     ; LED[4]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -6.021 ns ; flt[6]     ; LED[1]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -6.021 ns ; flt[6]     ; LED[3]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -6.089 ns ; flt[3]     ; LED[8]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -6.092 ns ; flt[3]     ; LED[6]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -6.118 ns ; flt[3]     ; LED[7]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -6.135 ns ; flt[7]     ; Encoder:send|data_temp[15]     ; clk      ;
+; N/A                                     ; None                                                ; -6.285 ns ; flt[1]     ; LED[5]~reg0                    ; clk      ;
+; N/A                                     ; None                                                ; -6.323 ns ; flt[4]     ; LED[8]~reg0                    ; clk      ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;           ;            ;                                ;          ;
++-----------------------------------------+-----------------------------------------------------+-----------+------------+--------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Timing Analyzer
+    Info: Version 6.0 Build 178 04/27/2006 SJ Full Version
+    Info: Processing started: Tue Jul 17 16:02:47 2012
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off Phase_ctrl -c Phase_ctrl
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 74.88 MHz between source register "Encoder:send|counter1[2]" and destination register "Encoder:send|pulse" (period= 13.354 ns)
+    Info: + Longest register to register delay is 12.645 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X11_Y2_N7; Fanout = 10; REG Node = 'Encoder:send|counter1[2]'
+        Info: 2: + IC(0.930 ns) + CELL(0.740 ns) = 1.670 ns; Loc. = LC_X11_Y2_N8; Fanout = 4; COMB Node = 'Encoder:send|LessThan34~295'
+        Info: 3: + IC(1.853 ns) + CELL(0.511 ns) = 4.034 ns; Loc. = LC_X12_Y2_N4; Fanout = 3; COMB Node = 'Encoder:send|LessThan34~297'
+        Info: 4: + IC(1.175 ns) + CELL(0.200 ns) = 5.409 ns; Loc. = LC_X12_Y2_N8; Fanout = 1; COMB Node = 'Encoder:send|pulse~2833'
+        Info: 5: + IC(0.741 ns) + CELL(0.200 ns) = 6.350 ns; Loc. = LC_X12_Y2_N2; Fanout = 2; COMB Node = 'Encoder:send|pulse~2835'
+        Info: 6: + IC(1.944 ns) + CELL(0.740 ns) = 9.034 ns; Loc. = LC_X12_Y4_N9; Fanout = 1; COMB Node = 'Encoder:send|pulse~2839'
+        Info: 7: + IC(0.723 ns) + CELL(0.200 ns) = 9.957 ns; Loc. = LC_X12_Y4_N0; Fanout = 1; COMB Node = 'Encoder:send|pulse~2840'
+        Info: 8: + IC(0.776 ns) + CELL(0.511 ns) = 11.244 ns; Loc. = LC_X12_Y4_N2; Fanout = 1; COMB Node = 'Encoder:send|pulse~2841'
+        Info: 9: + IC(0.305 ns) + CELL(0.200 ns) = 11.749 ns; Loc. = LC_X12_Y4_N3; Fanout = 1; COMB Node = 'Encoder:send|pulse~2844'
+        Info: 10: + IC(0.305 ns) + CELL(0.591 ns) = 12.645 ns; Loc. = LC_X12_Y4_N4; Fanout = 1; REG Node = 'Encoder:send|pulse'
+        Info: Total cell delay = 3.893 ns ( 30.79 % )
+        Info: Total interconnect delay = 8.752 ns ( 69.21 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 3.681 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_14; Fanout = 304; CLK Node = 'clk'
+            Info: 2: + IC(1.600 ns) + CELL(0.918 ns) = 3.681 ns; Loc. = LC_X12_Y4_N4; Fanout = 1; REG Node = 'Encoder:send|pulse'
+            Info: Total cell delay = 2.081 ns ( 56.53 % )
+            Info: Total interconnect delay = 1.600 ns ( 43.47 % )
+        Info: - Longest clock path from clock "clk" to source register is 3.681 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_14; Fanout = 304; CLK Node = 'clk'
+            Info: 2: + IC(1.600 ns) + CELL(0.918 ns) = 3.681 ns; Loc. = LC_X11_Y2_N7; Fanout = 10; REG Node = 'Encoder:send|counter1[2]'
+            Info: Total cell delay = 2.081 ns ( 56.53 % )
+            Info: Total interconnect delay = 1.600 ns ( 43.47 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+Info: tsu for register "LED[6]~reg0" (data pin = "flt[7]", clock pin = "clk") is 8.114 ns
+    Info: + Longest pin to register delay is 11.462 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_54; Fanout = 3; PIN Node = 'flt[7]'
+        Info: 2: + IC(2.759 ns) + CELL(0.511 ns) = 4.402 ns; Loc. = LC_X9_Y4_N0; Fanout = 1; COMB Node = 'err_drv~54'
+        Info: 3: + IC(0.819 ns) + CELL(0.511 ns) = 5.732 ns; Loc. = LC_X9_Y4_N7; Fanout = 20; COMB Node = 'err_drv~56'
+        Info: 4: + IC(0.305 ns) + CELL(0.200 ns) = 6.237 ns; Loc. = LC_X9_Y4_N8; Fanout = 1; COMB Node = 'pwma~97'
+        Info: 5: + IC(1.881 ns) + CELL(0.200 ns) = 8.318 ns; Loc. = LC_X9_Y6_N2; Fanout = 12; COMB Node = 'LED[6]~169'
+        Info: 6: + IC(2.048 ns) + CELL(0.200 ns) = 10.566 ns; Loc. = LC_X11_Y6_N5; Fanout = 1; COMB Node = 'LED~180'
+        Info: 7: + IC(0.305 ns) + CELL(0.591 ns) = 11.462 ns; Loc. = LC_X11_Y6_N6; Fanout = 1; REG Node = 'LED[6]~reg0'
+        Info: Total cell delay = 3.345 ns ( 29.18 % )
+        Info: Total interconnect delay = 8.117 ns ( 70.82 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 3.681 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_14; Fanout = 304; CLK Node = 'clk'
+        Info: 2: + IC(1.600 ns) + CELL(0.918 ns) = 3.681 ns; Loc. = LC_X11_Y6_N6; Fanout = 1; REG Node = 'LED[6]~reg0'
+        Info: Total cell delay = 2.081 ns ( 56.53 % )
+        Info: Total interconnect delay = 1.600 ns ( 43.47 % )
+Info: tco from clock "clk" to destination pin "pwmn[3]" through register "Decoder:receive|err_com" is 12.478 ns
+    Info: + Longest clock path from clock "clk" to source register is 3.681 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_14; Fanout = 304; CLK Node = 'clk'
+        Info: 2: + IC(1.600 ns) + CELL(0.918 ns) = 3.681 ns; Loc. = LC_X8_Y4_N2; Fanout = 14; REG Node = 'Decoder:receive|err_com'
+        Info: Total cell delay = 2.081 ns ( 56.53 % )
+        Info: Total interconnect delay = 1.600 ns ( 43.47 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 8.421 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X8_Y4_N2; Fanout = 14; REG Node = 'Decoder:receive|err_com'
+        Info: 2: + IC(0.942 ns) + CELL(0.740 ns) = 1.682 ns; Loc. = LC_X8_Y4_N9; Fanout = 6; COMB Node = 'pwma~89'
+        Info: 3: + IC(1.235 ns) + CELL(0.511 ns) = 3.428 ns; Loc. = LC_X9_Y4_N4; Fanout = 2; COMB Node = 'pwma~91'
+        Info: 4: + IC(2.671 ns) + CELL(2.322 ns) = 8.421 ns; Loc. = PIN_49; Fanout = 0; PIN Node = 'pwmn[3]'
+        Info: Total cell delay = 3.573 ns ( 42.43 % )
+        Info: Total interconnect delay = 4.848 ns ( 57.57 % )
+Info: Longest tpd from source pin "flt[7]" to destination pin "pwma[4]" is 12.318 ns
+    Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_54; Fanout = 3; PIN Node = 'flt[7]'
+    Info: 2: + IC(2.759 ns) + CELL(0.511 ns) = 4.402 ns; Loc. = LC_X9_Y4_N0; Fanout = 1; COMB Node = 'err_drv~54'
+    Info: 3: + IC(0.819 ns) + CELL(0.511 ns) = 5.732 ns; Loc. = LC_X9_Y4_N7; Fanout = 20; COMB Node = 'err_drv~56'
+    Info: 4: + IC(1.334 ns) + CELL(0.200 ns) = 7.266 ns; Loc. = LC_X8_Y4_N3; Fanout = 2; COMB Node = 'pwma~92'
+    Info: 5: + IC(2.730 ns) + CELL(2.322 ns) = 12.318 ns; Loc. = PIN_47; Fanout = 0; PIN Node = 'pwma[4]'
+    Info: Total cell delay = 4.676 ns ( 37.96 % )
+    Info: Total interconnect delay = 7.642 ns ( 62.04 % )
+Info: th for register "LED[5]~reg0" (data pin = "flt[5]", clock pin = "clk") is -1.212 ns
+    Info: + Longest clock path from clock "clk" to destination register is 3.681 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_14; Fanout = 304; CLK Node = 'clk'
+        Info: 2: + IC(1.600 ns) + CELL(0.918 ns) = 3.681 ns; Loc. = LC_X9_Y6_N7; Fanout = 1; REG Node = 'LED[5]~reg0'
+        Info: Total cell delay = 2.081 ns ( 56.53 % )
+        Info: Total interconnect delay = 1.600 ns ( 43.47 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 5.114 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_78; Fanout = 3; PIN Node = 'flt[5]'
+        Info: 2: + IC(2.799 ns) + CELL(1.183 ns) = 5.114 ns; Loc. = LC_X9_Y6_N7; Fanout = 1; REG Node = 'LED[5]~reg0'
+        Info: Total cell delay = 2.315 ns ( 45.27 % )
+        Info: Total interconnect delay = 2.799 ns ( 54.73 % )
+Info: Quartus II Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Processing ended: Tue Jul 17 16:02:48 2012
+    Info: Elapsed time: 00:00:02
+
+

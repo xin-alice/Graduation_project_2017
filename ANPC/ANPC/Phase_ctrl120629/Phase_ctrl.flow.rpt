@@ -1,0 +1,95 @@
+Flow report for Phase_ctrl
+Tue Jul 17 16:02:48 2012
+Version 6.0 Build 178 04/27/2006 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------+
+; Flow Summary                                                       ;
++-------------------------+------------------------------------------+
+; Flow Status             ; Successful - Tue Jul 17 16:02:48 2012    ;
+; Quartus II Version      ; 6.0 Build 178 04/27/2006 SJ Full Version ;
+; Revision Name           ; Phase_ctrl                               ;
+; Top-level Entity Name   ; phase_ctrl                               ;
+; Family                  ; MAX II                                   ;
+; Device                  ; EPM570T100C5                             ;
+; Timing Models           ; Final                                    ;
+; Met timing requirements ; Yes                                      ;
+; Total logic elements    ; 552 / 570 ( 97 % )                       ;
+; Total pins              ; 76 / 76 ( 100 % )                        ;
+; Total virtual pins      ; 0                                        ;
+; UFM blocks              ; 0 / 1 ( 0 % )                            ;
++-------------------------+------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 07/17/2012 16:02:28 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; Phase_ctrl          ;
++-------------------+---------------------+
+
+
++--------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                   ;
++-----------------+-------+---------------+-------------+------------+
+; Assignment Name ; Value ; Default Value ; Entity Name ; Section Id ;
++-----------------+-------+---------------+-------------+------------+
+
+
++-------------------------------------+
+; Flow Elapsed Time                   ;
++----------------------+--------------+
+; Module Name          ; Elapsed Time ;
++----------------------+--------------+
+; Analysis & Synthesis ; 00:00:05     ;
+; Fitter               ; 00:00:08     ;
+; Assembler            ; 00:00:00     ;
+; Timing Analyzer      ; 00:00:02     ;
+; Total                ; 00:00:15     ;
++----------------------+--------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off Phase_ctrl -c Phase_ctrl
+quartus_fit --read_settings_files=off --write_settings_files=off Phase_ctrl -c Phase_ctrl
+quartus_asm --read_settings_files=off --write_settings_files=off Phase_ctrl -c Phase_ctrl
+quartus_tan --read_settings_files=off --write_settings_files=off Phase_ctrl -c Phase_ctrl
+
+
+

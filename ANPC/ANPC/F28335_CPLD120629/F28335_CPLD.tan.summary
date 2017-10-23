@@ -1,0 +1,76 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 10.136 ns
+From           : ADD[7]
+To             : mode_temp_a[5]
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 12.800 ns
+From           : mode_w[0]
+To             : GPI0
+From Clock     : EPWMSYNCO
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 12.299 ns
+From           : ZCS0n
+To             : Encoder_ENn
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -1.310 ns
+From           : DATA[5]
+To             : mode_temp_c[5]
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 76.79 MHz ( period = 13.023 ns )
+From           : Decoder:receive_C|err_com
+To             : Encoder:sendW|data_temp[5]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clk'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : Decoder:receive_C|start
+To             : Decoder:receive_C|start_last
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 55
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 55
+
+--------------------------------------------------------------------------------------
+

@@ -1,0 +1,95 @@
+Flow report for F28335_CPLD
+Fri Jun 29 16:37:52 2012
+Version 6.0 Build 178 04/27/2006 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------+
+; Flow Summary                                                       ;
++-------------------------+------------------------------------------+
+; Flow Status             ; Successful - Fri Jun 29 16:37:52 2012    ;
+; Quartus II Version      ; 6.0 Build 178 04/27/2006 SJ Full Version ;
+; Revision Name           ; F28335_CPLD                              ;
+; Top-level Entity Name   ; F28335_CPLD                              ;
+; Family                  ; MAX II                                   ;
+; Device                  ; EPM1270T144C5                            ;
+; Timing Models           ; Final                                    ;
+; Met timing requirements ; No                                       ;
+; Total logic elements    ; 1,197 / 1,270 ( 94 % )                   ;
+; Total pins              ; 116 / 116 ( 100 % )                      ;
+; Total virtual pins      ; 0                                        ;
+; UFM blocks              ; 0 / 1 ( 0 % )                            ;
++-------------------------+------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 06/29/2012 16:37:25 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; F28335_CPLD         ;
++-------------------+---------------------+
+
+
++--------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                   ;
++-----------------+-------+---------------+-------------+------------+
+; Assignment Name ; Value ; Default Value ; Entity Name ; Section Id ;
++-----------------+-------+---------------+-------------+------------+
+
+
++-------------------------------------+
+; Flow Elapsed Time                   ;
++----------------------+--------------+
+; Module Name          ; Elapsed Time ;
++----------------------+--------------+
+; Analysis & Synthesis ; 00:00:08     ;
+; Fitter               ; 00:00:13     ;
+; Assembler            ; 00:00:01     ;
+; Timing Analyzer      ; 00:00:03     ;
+; Total                ; 00:00:25     ;
++----------------------+--------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off F28335_CPLD -c F28335_CPLD
+quartus_fit --read_settings_files=off --write_settings_files=off F28335_CPLD -c F28335_CPLD
+quartus_asm --read_settings_files=off --write_settings_files=off F28335_CPLD -c F28335_CPLD
+quartus_tan --read_settings_files=off --write_settings_files=off F28335_CPLD -c F28335_CPLD
+
+
+

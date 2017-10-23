@@ -1,0 +1,11 @@
+Fitter Status : Successful - Fri Jun 29 16:37:46 2012
+Quartus II Version : 6.0 Build 178 04/27/2006 SJ Full Version
+Revision Name : F28335_CPLD
+Top-level Entity Name : F28335_CPLD
+Family : MAX II
+Device : EPM1270T144C5
+Timing Models : Final
+Total logic elements : 1,197 / 1,270 ( 94 % )
+Total pins : 116 / 116 ( 100 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

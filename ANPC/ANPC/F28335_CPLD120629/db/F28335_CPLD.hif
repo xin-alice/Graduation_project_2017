@@ -1,0 +1,111 @@
+Version 6.0 Build 178 04/27/2006 SJ Full Version
+36
+1869
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Partition --
+-- End Partition --
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+Encoder
+# storage
+db|F28335_CPLD.(2).cnf
+db|F28335_CPLD.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+Encoder.vhd
+8af268e1f9a033de1b5af47359fdd5a
+4
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# user_parameter {
+ constraint(data)
+5 downto 1
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+Encoder:sendA
+Encoder:sendB
+Encoder:sendC
+Encoder:sendU
+Encoder:sendV
+Encoder:sendW
+}
+# end
+# entity
+Decoder
+# storage
+db|F28335_CPLD.(1).cnf
+db|F28335_CPLD.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+Decoder.vhd
+b5985529c5b4ddcca712234e9a48ae9
+4
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# user_parameter {
+ constraint(data)
+16 downto 1
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+Decoder:receive_A
+Decoder:receive_B
+Decoder:receive_C
+Decoder:receive_U
+Decoder:receive_V
+Decoder:receive_W
+}
+# end
+# entity
+F28335_CPLD
+# storage
+db|F28335_CPLD.(0).cnf
+db|F28335_CPLD.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+F28335DSP.vhd
+64d34e6d828c0d67e8f27d71e5a579d
+4
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+|
+}
+# end
+# complete
+

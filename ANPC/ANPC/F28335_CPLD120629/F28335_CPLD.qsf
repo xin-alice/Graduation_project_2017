@@ -1,0 +1,153 @@
+# Copyright (C) 1991-2006 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		F28335_CPLD_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+set_global_assignment -name FAMILY "MAX II"
+set_global_assignment -name DEVICE EPM1270T144C5
+set_global_assignment -name TOP_LEVEL_ENTITY F28335_CPLD
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 6.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:11:14  DECEMBER 10, 2008"
+set_global_assignment -name LAST_QUARTUS_VERSION 6.0
+set_global_assignment -name DEVICE_FILTER_PACKAGE TQFP
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 144
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 5
+set_location_assignment PIN_114 -to AD_clk
+set_location_assignment PIN_113 -to AD_CSn
+set_location_assignment PIN_117 -to AD_EOCn
+set_location_assignment PIN_84 -to ADD[0]
+set_location_assignment PIN_81 -to ADD[1]
+set_location_assignment PIN_80 -to ADD[2]
+set_location_assignment PIN_79 -to ADD[3]
+set_location_assignment PIN_78 -to ADD[4]
+set_location_assignment PIN_77 -to ADD[5]
+set_location_assignment PIN_76 -to ADD[6]
+set_location_assignment PIN_75 -to ADD[7]
+set_location_assignment PIN_74 -to ADD[8]
+set_location_assignment PIN_94 -to DATA[0]
+set_location_assignment PIN_95 -to DATA[1]
+set_location_assignment PIN_96 -to DATA[2]
+set_location_assignment PIN_97 -to DATA[3]
+set_location_assignment PIN_98 -to DATA[4]
+set_location_assignment PIN_101 -to DATA[5]
+set_location_assignment PIN_102 -to DATA[6]
+set_location_assignment PIN_103 -to DATA[7]
+set_location_assignment PIN_104 -to DATA[8]
+set_location_assignment PIN_105 -to DATA[9]
+set_location_assignment PIN_106 -to DATA[10]
+set_location_assignment PIN_107 -to DATA[11]
+set_location_assignment PIN_108 -to DATA[12]
+set_location_assignment PIN_109 -to DATA[13]
+set_location_assignment PIN_110 -to DATA[14]
+set_location_assignment PIN_111 -to DATA[15]
+set_location_assignment PIN_91 -to DSP_clk
+set_location_assignment PIN_50 -to ECAP5
+set_location_assignment PIN_49 -to ECAP6
+set_location_assignment PIN_120 -to Encoder_ENn
+set_location_assignment PIN_53 -to EPWMSYNCI
+set_location_assignment PIN_52 -to EPWMSYNCO
+set_location_assignment PIN_121 -to EXT_IN_CE
+set_location_assignment PIN_122 -to EXT_OUT_CE
+set_location_assignment PIN_38 -to FOA
+set_location_assignment PIN_37 -to FOB
+set_location_assignment PIN_15 -to GPI0
+set_location_assignment PIN_16 -to GPI1
+set_location_assignment PIN_20 -to GPI2
+set_location_assignment PIN_21 -to GPI3
+set_location_assignment PIN_22 -to GPI4
+set_location_assignment PIN_23 -to GPI5
+set_location_assignment PIN_24 -to GPI6
+set_location_assignment PIN_27 -to GPI7
+set_location_assignment PIN_28 -to GPI8
+set_location_assignment PIN_123 -to GPIOP0
+set_location_assignment PIN_124 -to GPIOP1
+set_location_assignment PIN_125 -to GPIOP2
+set_location_assignment PIN_127 -to GPIOP3
+set_location_assignment PIN_129 -to GPIOP4
+set_location_assignment PIN_130 -to GPIOP5
+set_location_assignment PIN_131 -to GPIOP6
+set_location_assignment PIN_132 -to GPIOP7
+set_location_assignment PIN_133 -to GPIOP8
+set_location_assignment PIN_134 -to GPIOP9
+set_location_assignment PIN_137 -to GPIOP10
+set_location_assignment PIN_138 -to GPIOP11
+set_location_assignment PIN_139 -to GPIOP12
+set_location_assignment PIN_140 -to GPIOP13
+set_location_assignment PIN_141 -to GPIOP14
+set_location_assignment PIN_142 -to GPIOP15
+set_location_assignment PIN_118 -to IO_RW
+set_location_assignment PIN_119 -to IOEN
+set_location_assignment PIN_89 -to OC
+set_location_assignment PIN_32 -to OCA
+set_location_assignment PIN_31 -to OCB
+set_location_assignment PIN_29 -to OVA
+set_location_assignment PIN_30 -to OVB
+set_location_assignment PIN_58 -to PDPINTA
+set_location_assignment PIN_57 -to PDPINTB
+set_location_assignment PIN_45 -to PKTEND
+set_location_assignment PIN_72 -to pwm1A
+set_location_assignment PIN_71 -to pwm1B
+set_location_assignment PIN_70 -to pwm2A
+set_location_assignment PIN_69 -to pwm2B
+set_location_assignment PIN_68 -to pwm3A
+set_location_assignment PIN_67 -to pwm3B
+set_location_assignment PIN_66 -to pwm4A
+set_location_assignment PIN_63 -to pwm4B
+set_location_assignment PIN_62 -to pwm5A
+set_location_assignment PIN_61 -to pwm5B
+set_location_assignment PIN_60 -to pwm6A
+set_location_assignment PIN_59 -to pwm6B
+set_location_assignment PIN_39 -to PWMAEN
+set_location_assignment PIN_40 -to PWMBEN
+set_location_assignment PIN_143 -to PWMO1
+set_location_assignment PIN_144 -to PWMO2
+set_location_assignment PIN_1 -to PWMO3
+set_location_assignment PIN_2 -to PWMO4
+set_location_assignment PIN_3 -to PWMO5
+set_location_assignment PIN_4 -to PWMO6
+set_location_assignment PIN_5 -to PWMO7
+set_location_assignment PIN_6 -to PWMO8
+set_location_assignment PIN_7 -to PWMO9
+set_location_assignment PIN_8 -to PWMO10
+set_location_assignment PIN_11 -to PWMO11
+set_location_assignment PIN_12 -to PWMO12
+set_location_assignment PIN_13 -to PWMO13
+set_location_assignment PIN_14 -to PWMO14
+set_location_assignment PIN_86 -to RDn
+set_location_assignment PIN_87 -to RnW
+set_location_assignment PIN_48 -to USBCSn
+set_location_assignment PIN_41 -to USBFLAGA
+set_location_assignment PIN_42 -to USBFLAGB
+set_location_assignment PIN_43 -to USBFLAGC
+set_location_assignment PIN_44 -to USBINT0
+set_location_assignment PIN_93 -to WEn
+set_location_assignment PIN_73 -to XA19
+set_location_assignment PIN_88 -to ZCS0n
+set_location_assignment PIN_85 -to ZCS7n
+set_location_assignment PIN_55 -to MCLKXA
+set_location_assignment PIN_112 -to ADCRESET
+set_global_assignment -name VHDL_FILE F28335DSP.vhd
+set_global_assignment -name VHDL_FILE Encoder.vhd
+set_global_assignment -name VHDL_FILE Decoder.vhd
+set_location_assignment PIN_18 -to clk
+set_location_assignment PIN_51 -to reset

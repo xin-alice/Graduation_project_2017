@@ -1,0 +1,203 @@
+ -- Copyright (C) 1991-2006 Altera Corporation
+ -- Your use of Altera Corporation's design tools, logic functions 
+ -- and other software and tools, and its AMPP partner logic 
+ -- functions, and any output files any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Altera Program License 
+ -- Subscription Agreement, Altera MegaCore Function License 
+ -- Agreement, or other applicable license agreement, including, 
+ -- without limitation, that your use is for the sole purpose of 
+ -- programming logic devices manufactured by Altera and sold by 
+ -- Altera or its authorized distributors.  Please refer to the 
+ -- applicable agreement for further details.
+ -- 
+ -- This is a Quartus II output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus II input file. This file cannot be used
+ -- to make Quartus II pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus II help.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- NC            : No Connect. This pin has no internal connection to the device.
+ -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (2.5V/3.3V).
+ -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
+ --                 of its bank.
+ --					Bank 1:		3.3V
+ --					Bank 2:		3.3V
+ --					Bank 3:		3.3V
+ --					Bank 4:		3.3V
+ -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
+ --					It can also be used to report unused dedicated pins. The connection
+ --					on the board for unused dedicated pins depends on whether this will
+ --					be used in a future design. One example is device migration. When
+ --					using device migration, refer to the device pin-tables. If it is a
+ --					GND pin in the pin table or if it will not be used in a future design
+ --					for another purpose the it MUST be connected to GND. If it is an unused
+ --					dedicated pin, then it can be connected to a valid signal on the board
+ --					(low, high, or toggling) if that signal is required for a different
+ --					revision of the design.
+ -- GND+          : Unused input pin. It can also be used to report unused dual-purpose pins.
+ --					This pin should be connected to GND. It may also be connected  to a
+ --					valid signal  on the board  (low, high, or toggling)  if that signal
+ --					is required for a different revision of the design.
+ -- GND*          : Unused  I/O  pin.   This pin can either be left unconnected or
+ --           	    connected to GND.  Connecting this pin to GND will improve the
+ --           	    device's immunity to noise.
+ -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
+ -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
+ -- RESERVED_INPUT_WITH_WEAK_PULLUP    : Pin is tri-stated with internal weak pull-up resistor.
+ -- RESERVED_INPUT_WITH_BUS_HOLD       : Pin is tri-stated with bus-hold circuitry.
+ ---------------------------------------------------------------------------------
+
+Quartus II Version 6.0 Build 178 04/27/2006 SJ Full Version
+CHIP  "F28335_CPLD"  ASSIGNED TO AN: EPM1270T144C5
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+PWMO3                        : 1         : output : LVTTL             :         : 1         : Y              
+PWMO4                        : 2         : output : LVTTL             :         : 1         : Y              
+PWMO5                        : 3         : output : LVTTL             :         : 1         : Y              
+PWMO6                        : 4         : output : LVTTL             :         : 1         : Y              
+PWMO7                        : 5         : output : LVTTL             :         : 1         : Y              
+PWMO8                        : 6         : output : LVTTL             :         : 1         : Y              
+PWMO9                        : 7         : output : LVTTL             :         : 1         : Y              
+PWMO10                       : 8         : output : LVTTL             :         : 1         : Y              
+VCCIO1                       : 9         : power  :                   : 3.3V    : 1         :                
+GNDIO                        : 10        : gnd    :                   :         :           :                
+PWMO11                       : 11        : output : LVTTL             :         : 1         : Y              
+PWMO12                       : 12        : output : LVTTL             :         : 1         : Y              
+PWMO13                       : 13        : output : LVTTL             :         : 1         : Y              
+PWMO14                       : 14        : output : LVTTL             :         : 1         : Y              
+GPI0                         : 15        : output : LVTTL             :         : 1         : Y              
+GPI1                         : 16        : output : LVTTL             :         : 1         : Y              
+GNDINT                       : 17        : gnd    :                   :         :           :                
+clk                          : 18        : input  : LVTTL             :         : 1         : Y              
+VCCINT                       : 19        : power  :                   : 3.3V    :           :                
+GPI2                         : 20        : output : LVTTL             :         : 1         : Y              
+GPI3                         : 21        : output : LVTTL             :         : 1         : Y              
+GPI4                         : 22        : output : LVTTL             :         : 1         : Y              
+GPI5                         : 23        : output : LVTTL             :         : 1         : Y              
+GPI6                         : 24        : output : LVTTL             :         : 1         : Y              
+VCCIO1                       : 25        : power  :                   : 3.3V    : 1         :                
+GNDIO                        : 26        : gnd    :                   :         :           :                
+GPI7                         : 27        : output : LVTTL             :         : 1         : Y              
+GPI8                         : 28        : output : LVTTL             :         : 1         : Y              
+OVA                          : 29        : input  : LVTTL             :         : 1         : Y              
+OVB                          : 30        : input  : LVTTL             :         : 1         : Y              
+OCB                          : 31        : input  : LVTTL             :         : 1         : Y              
+OCA                          : 32        : input  : LVTTL             :         : 1         : Y              
+TMS                          : 33        : input  :                   :         : 1         :                
+TDI                          : 34        : input  :                   :         : 1         :                
+TCK                          : 35        : input  :                   :         : 1         :                
+TDO                          : 36        : output :                   :         : 1         :                
+FOB                          : 37        : input  : LVTTL             :         : 4         : Y              
+FOA                          : 38        : input  : LVTTL             :         : 4         : Y              
+PWMAEN                       : 39        : output : LVTTL             :         : 4         : Y              
+PWMBEN                       : 40        : output : LVTTL             :         : 4         : Y              
+USBFLAGA                     : 41        : input  : LVTTL             :         : 4         : Y              
+USBFLAGB                     : 42        : input  : LVTTL             :         : 4         : Y              
+USBFLAGC                     : 43        : input  : LVTTL             :         : 4         : Y              
+USBINT0                      : 44        : input  : LVTTL             :         : 4         : Y              
+PKTEND                       : 45        : input  : LVTTL             :         : 4         : Y              
+VCCIO4                       : 46        : power  :                   : 3.3V    : 4         :                
+GNDIO                        : 47        : gnd    :                   :         :           :                
+USBCSn                       : 48        : output : LVTTL             :         : 4         : Y              
+ECAP6                        : 49        : output : LVTTL             :         : 4         : Y              
+ECAP5                        : 50        : output : LVTTL             :         : 4         : Y              
+reset                        : 51        : input  : LVTTL             :         : 4         : Y              
+EPWMSYNCO                    : 52        : input  : LVTTL             :         : 4         : Y              
+EPWMSYNCI                    : 53        : input  : LVTTL             :         : 4         : Y              
+GNDINT                       : 54        : gnd    :                   :         :           :                
+MCLKXA                       : 55        : input  : LVTTL             :         : 4         : Y              
+VCCINT                       : 56        : power  :                   : 3.3V    :           :                
+PDPINTB                      : 57        : output : LVTTL             :         : 4         : Y              
+PDPINTA                      : 58        : output : LVTTL             :         : 4         : Y              
+pwm6B                        : 59        : input  : LVTTL             :         : 4         : Y              
+pwm6A                        : 60        : input  : LVTTL             :         : 4         : Y              
+pwm5B                        : 61        : input  : LVTTL             :         : 4         : Y              
+pwm5A                        : 62        : input  : LVTTL             :         : 4         : Y              
+pwm4B                        : 63        : input  : LVTTL             :         : 4         : Y              
+VCCIO4                       : 64        : power  :                   : 3.3V    : 4         :                
+GNDIO                        : 65        : gnd    :                   :         :           :                
+pwm4A                        : 66        : input  : LVTTL             :         : 4         : Y              
+pwm3B                        : 67        : input  : LVTTL             :         : 4         : Y              
+pwm3A                        : 68        : input  : LVTTL             :         : 4         : Y              
+pwm2B                        : 69        : input  : LVTTL             :         : 4         : Y              
+pwm2A                        : 70        : input  : LVTTL             :         : 4         : Y              
+pwm1B                        : 71        : input  : LVTTL             :         : 4         : Y              
+pwm1A                        : 72        : input  : LVTTL             :         : 4         : Y              
+XA19                         : 73        : input  : LVTTL             :         : 3         : Y              
+ADD[8]                       : 74        : input  : LVTTL             :         : 3         : Y              
+ADD[7]                       : 75        : input  : LVTTL             :         : 3         : Y              
+ADD[6]                       : 76        : input  : LVTTL             :         : 3         : Y              
+ADD[5]                       : 77        : input  : LVTTL             :         : 3         : Y              
+ADD[4]                       : 78        : input  : LVTTL             :         : 3         : Y              
+ADD[3]                       : 79        : input  : LVTTL             :         : 3         : Y              
+ADD[2]                       : 80        : input  : LVTTL             :         : 3         : Y              
+ADD[1]                       : 81        : input  : LVTTL             :         : 3         : Y              
+VCCIO3                       : 82        : power  :                   : 3.3V    : 3         :                
+GNDIO                        : 83        : gnd    :                   :         :           :                
+ADD[0]                       : 84        : input  : LVTTL             :         : 3         : Y              
+ZCS7n                        : 85        : input  : LVTTL             :         : 3         : Y              
+RDn                          : 86        : input  : LVTTL             :         : 3         : Y              
+RnW                          : 87        : input  : LVTTL             :         : 3         : Y              
+ZCS0n                        : 88        : input  : LVTTL             :         : 3         : Y              
+OC                           : 89        : output : LVTTL             :         : 3         : Y              
+VCCINT                       : 90        : power  :                   : 3.3V    :           :                
+DSP_clk                      : 91        : input  : LVTTL             :         : 3         : Y              
+GNDINT                       : 92        : gnd    :                   :         :           :                
+WEn                          : 93        : input  : LVTTL             :         : 3         : Y              
+DATA[0]                      : 94        : bidir  : LVTTL             :         : 3         : Y              
+DATA[1]                      : 95        : bidir  : LVTTL             :         : 3         : Y              
+DATA[2]                      : 96        : bidir  : LVTTL             :         : 3         : Y              
+DATA[3]                      : 97        : bidir  : LVTTL             :         : 3         : Y              
+DATA[4]                      : 98        : bidir  : LVTTL             :         : 3         : Y              
+GNDIO                        : 99        : gnd    :                   :         :           :                
+VCCIO3                       : 100       : power  :                   : 3.3V    : 3         :                
+DATA[5]                      : 101       : bidir  : LVTTL             :         : 3         : Y              
+DATA[6]                      : 102       : bidir  : LVTTL             :         : 3         : Y              
+DATA[7]                      : 103       : bidir  : LVTTL             :         : 3         : Y              
+DATA[8]                      : 104       : bidir  : LVTTL             :         : 3         : Y              
+DATA[9]                      : 105       : bidir  : LVTTL             :         : 3         : Y              
+DATA[10]                     : 106       : bidir  : LVTTL             :         : 3         : Y              
+DATA[11]                     : 107       : bidir  : LVTTL             :         : 3         : Y              
+DATA[12]                     : 108       : bidir  : LVTTL             :         : 3         : Y              
+DATA[13]                     : 109       : bidir  : LVTTL             :         : 2         : Y              
+DATA[14]                     : 110       : bidir  : LVTTL             :         : 2         : Y              
+DATA[15]                     : 111       : bidir  : LVTTL             :         : 2         : Y              
+ADCRESET                     : 112       : output : LVTTL             :         : 2         : Y              
+AD_CSn                       : 113       : output : LVTTL             :         : 2         : Y              
+AD_clk                       : 114       : output : LVTTL             :         : 2         : Y              
+GNDIO                        : 115       : gnd    :                   :         :           :                
+VCCIO2                       : 116       : power  :                   : 3.3V    : 2         :                
+AD_EOCn                      : 117       : output : LVTTL             :         : 2         : Y              
+IO_RW                        : 118       : output : LVTTL             :         : 2         : Y              
+IOEN                         : 119       : output : LVTTL             :         : 2         : Y              
+Encoder_ENn                  : 120       : output : LVTTL             :         : 2         : Y              
+EXT_IN_CE                    : 121       : output : LVTTL             :         : 2         : Y              
+EXT_OUT_CE                   : 122       : output : LVTTL             :         : 2         : Y              
+GPIOP0                       : 123       : input  : LVTTL             :         : 2         : Y              
+GPIOP1                       : 124       : output : LVTTL             :         : 2         : Y              
+GPIOP2                       : 125       : input  : LVTTL             :         : 2         : Y              
+VCCINT                       : 126       : power  :                   : 3.3V    :           :                
+GPIOP3                       : 127       : output : LVTTL             :         : 2         : Y              
+GNDINT                       : 128       : gnd    :                   :         :           :                
+GPIOP4                       : 129       : input  : LVTTL             :         : 2         : Y              
+GPIOP5                       : 130       : output : LVTTL             :         : 2         : Y              
+GPIOP6                       : 131       : input  : LVTTL             :         : 2         : Y              
+GPIOP7                       : 132       : output : LVTTL             :         : 2         : Y              
+GPIOP8                       : 133       : input  : LVTTL             :         : 2         : Y              
+GPIOP9                       : 134       : output : LVTTL             :         : 2         : Y              
+GNDIO                        : 135       : gnd    :                   :         :           :                
+VCCIO2                       : 136       : power  :                   : 3.3V    : 2         :                
+GPIOP10                      : 137       : input  : LVTTL             :         : 2         : Y              
+GPIOP11                      : 138       : output : LVTTL             :         : 2         : Y              
+GPIOP12                      : 139       : output : LVTTL             :         : 2         : Y              
+GPIOP13                      : 140       : output : LVTTL             :         : 2         : Y              
+GPIOP14                      : 141       : output : LVTTL             :         : 2         : Y              
+GPIOP15                      : 142       : output : LVTTL             :         : 2         : Y              
+PWMO1                        : 143       : output : LVTTL             :         : 2         : Y              
+PWMO2                        : 144       : output : LVTTL             :         : 2         : Y              

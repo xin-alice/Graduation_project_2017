@@ -1,0 +1,582 @@
+Analysis & Synthesis report for Phase_ctrl
+Tue Jul 17 16:02:33 2012
+Version 6.0 Build 178 04/27/2006 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. General Register Statistics
+  8. Inverted Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Source assignments for Top-level Entity: |Phase_ctrl
+ 11. Source assignments for delay:PWM_delay1
+ 12. Source assignments for delay:PWM_delay2
+ 13. Source assignments for delay:PWM_delay3
+ 14. Source assignments for delay:PWM_delay4
+ 15. Source assignments for delay:PWM_delay5
+ 16. Source assignments for delay:PWM_delay6
+ 17. Source assignments for Decoder:receive
+ 18. Source assignments for Encoder:send
+ 19. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Tue Jul 17 16:02:33 2012    ;
+; Quartus II Version          ; 6.0 Build 178 04/27/2006 SJ Full Version ;
+; Revision Name               ; Phase_ctrl                               ;
+; Top-level Entity Name       ; phase_ctrl                               ;
+; Family                      ; MAX II                                   ;
+; Total logic elements        ; 593                                      ;
+; Total pins                  ; 76                                       ;
+; Total virtual pins          ; 0                                        ;
+; UFM blocks                  ; 0                                        ;
++-----------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                             ; Setting            ; Default Value      ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                             ; EPM570T100C5       ;                    ;
+; Top-level entity name                                              ; Phase_ctrl         ; Phase_ctrl         ;
+; Family name                                                        ; MAX II             ; Stratix            ;
+; Use smart compilation                                              ; Off                ; Off                ;
+; Restructure Multiplexers                                           ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                ; Off                ; Off                ;
+; Preserve fewer node names                                          ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                          ; Off                ; Off                ;
+; Verilog Version                                                    ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                       ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                           ; Auto               ; Auto               ;
+; Extract Verilog State Machines                                     ; On                 ; On                 ;
+; Extract VHDL State Machines                                        ; On                 ; On                 ;
+; Add Pass-Through Logic to Inferred RAMs                            ; On                 ; On                 ;
+; NOT Gate Push-Back                                                 ; On                 ; On                 ;
+; Power-Up Don't Care                                                ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                       ; Off                ; Off                ;
+; Remove Duplicate Registers                                         ; On                 ; On                 ;
+; Ignore CARRY Buffers                                               ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                             ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                              ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore LCELL Buffers                                               ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                     ; Off                ; Off                ;
+; Optimization Technique -- MAX II                                   ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II ; 70                 ; 70                 ;
+; Auto Carry Chains                                                  ; On                 ; On                 ;
+; Auto Open-Drain Pins                                               ; On                 ; On                 ;
+; Remove Duplicate Logic                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                              ; Off                ; Off                ;
+; Perform gate-level register retiming                               ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax             ; On                 ; On                 ;
+; Auto Shift Register Replacement                                    ; On                 ; On                 ;
+; Auto Clock Enable Replacement                                      ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                  ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                             ; Off                ; Off                ;
+; Auto RAM Block Balancing                                           ; On                 ; On                 ;
+; Auto Resource Sharing                                              ; Off                ; Off                ;
+; Maximum Number of M512 Memory Blocks                               ; Unlimited          ; Unlimited          ;
+; Maximum Number of M4K Memory Blocks                                ; Unlimited          ; Unlimited          ;
+; Maximum Number of M-RAM Memory Blocks                              ; Unlimited          ; Unlimited          ;
+; Ignore translate_off and translate_on Synthesis Directives         ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                 ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                   ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                       ; Normal compilation ; Normal compilation ;
+; HDL message level                                                  ; Level2             ; Level2             ;
++--------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                   ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                      ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+
+; Phase_ctrl.vhd                   ; yes             ; User VHDL File  ; E:/works/VHDLWorks/5L-ANPC/×îÖÕ°æ/Phase_ctrl120629/Phase_ctrl.vhd ;
+; delay.vhd                        ; yes             ; User VHDL File  ; E:/works/VHDLWorks/5L-ANPC/×îÖÕ°æ/Phase_ctrl120629/delay.vhd      ;
+; Decoder.vhd                      ; yes             ; User VHDL File  ; E:/works/VHDLWorks/5L-ANPC/×îÖÕ°æ/Phase_ctrl120629/Decoder.vhd    ;
+; Encoder.vhd                      ; yes             ; User VHDL File  ; E:/works/VHDLWorks/5L-ANPC/×îÖÕ°æ/Phase_ctrl120629/Encoder.vhd    ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 593   ;
+;     -- Combinational with no register       ; 289   ;
+;     -- Register only                        ; 80    ;
+;     -- Combinational with a register        ; 224   ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 201   ;
+;     -- 3 input functions                    ; 70    ;
+;     -- 2 input functions                    ; 214   ;
+;     -- 1 input functions                    ; 27    ;
+;     -- 0 input functions                    ; 1     ;
+;         -- Combinational cells for routing  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 429   ;
+;     -- arithmetic mode                      ; 164   ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 16    ;
+;     -- asynchronous clear/load mode         ; 303   ;
+;                                             ;       ;
+; Total registers                             ; 304   ;
+; Total logic cells in carry chains           ; 184   ;
+; I/O pins                                    ; 76    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 304   ;
+; Total fan-out                               ; 2271  ;
+; Average fan-out                             ; 3.39  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                            ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name          ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------+
+; |phase_ctrl                ; 593 (138)   ; 304          ; 0          ; 76   ; 0            ; 289 (76)     ; 80 (26)           ; 224 (36)         ; 184 (36)        ; 0 (0)      ; |phase_ctrl                  ;
+;    |Decoder:receive|       ; 143 (143)   ; 76           ; 0          ; 0    ; 0            ; 67 (67)      ; 27 (27)           ; 49 (49)          ; 42 (42)         ; 0 (0)      ; |phase_ctrl|Decoder:receive  ;
+;    |Encoder:send|          ; 102 (102)   ; 22           ; 0          ; 0    ; 0            ; 80 (80)      ; 12 (12)           ; 10 (10)          ; 10 (10)         ; 0 (0)      ; |phase_ctrl|Encoder:send     ;
+;    |delay:PWM_delay1|      ; 35 (35)     ; 24           ; 0          ; 0    ; 0            ; 11 (11)      ; 3 (3)             ; 21 (21)          ; 16 (16)         ; 0 (0)      ; |phase_ctrl|delay:PWM_delay1 ;
+;    |delay:PWM_delay2|      ; 35 (35)     ; 24           ; 0          ; 0    ; 0            ; 11 (11)      ; 2 (2)             ; 22 (22)          ; 16 (16)         ; 0 (0)      ; |phase_ctrl|delay:PWM_delay2 ;
+;    |delay:PWM_delay3|      ; 35 (35)     ; 24           ; 0          ; 0    ; 0            ; 11 (11)      ; 3 (3)             ; 21 (21)          ; 16 (16)         ; 0 (0)      ; |phase_ctrl|delay:PWM_delay3 ;
+;    |delay:PWM_delay4|      ; 35 (35)     ; 24           ; 0          ; 0    ; 0            ; 11 (11)      ; 2 (2)             ; 22 (22)          ; 16 (16)         ; 0 (0)      ; |phase_ctrl|delay:PWM_delay4 ;
+;    |delay:PWM_delay5|      ; 35 (35)     ; 24           ; 0          ; 0    ; 0            ; 11 (11)      ; 3 (3)             ; 21 (21)          ; 16 (16)         ; 0 (0)      ; |phase_ctrl|delay:PWM_delay5 ;
+;    |delay:PWM_delay6|      ; 35 (35)     ; 24           ; 0          ; 0    ; 0            ; 11 (11)      ; 2 (2)             ; 22 (22)          ; 16 (16)         ; 0 (0)      ; |phase_ctrl|delay:PWM_delay6 ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 304   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 16    ;
+; Number of registers using Asynchronous Clear ; 288   ;
+; Number of registers using Asynchronous Load  ; 15    ;
+; Number of registers using Clock Enable       ; 60    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; Encoder:send|pulse                      ; 1       ;
+; Decoder:receive|err_com                 ; 14      ;
+; LED[1]~reg0                             ; 1       ;
+; LED[2]~reg0                             ; 1       ;
+; LED[3]~reg0                             ; 1       ;
+; LED[4]~reg0                             ; 1       ;
+; LED[5]~reg0                             ; 1       ;
+; LED[6]~reg0                             ; 1       ;
+; LED[7]~reg0                             ; 1       ;
+; LED[8]~reg0                             ; 1       ;
+; LED_temp[1]                             ; 2       ;
+; Total number of inverted registers = 11 ;         ;
++-----------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |phase_ctrl|LED_temp_err[3]                 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |phase_ctrl|LED_temp_err[6]                 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |phase_ctrl|LED_temp_err[5]                 ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |phase_ctrl|Decoder:receive|counter2[3]     ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |phase_ctrl|Decoder:receive|counter_up[2]   ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |phase_ctrl|Decoder:receive|counter_down[2] ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |phase_ctrl|Decoder:receive|counter1[5]     ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |phase_ctrl|Decoder:receive|i[5]            ;
+; 21:1               ; 9 bits    ; 126 LEs       ; 18 LEs               ; 108 LEs                ; Yes        ; |phase_ctrl|Encoder:send|counter1[9]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |phase_ctrl|LED[6]~reg0                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+
+
++------------------------------------------------------+
+; Source assignments for Top-level Entity: |Phase_ctrl ;
++----------------+-------+------+----------------------+
+; Assignment     ; Value ; From ; To                   ;
++----------------+-------+------+----------------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter_AD[1]        ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_AD[0]        ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_AD[2]        ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_AD[3]        ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_AD[4]        ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_AD[5]        ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_AD[6]        ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_AD[7]        ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_AD[8]        ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_AD[9]        ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_AD[10]       ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[0]       ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[1]       ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[2]       ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[3]       ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[4]       ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[5]       ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[6]       ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[7]       ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[8]       ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[9]       ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[10]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[11]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[12]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[13]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[14]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[15]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[16]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[17]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[18]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[19]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[20]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[21]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[22]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[23]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_LED[24]      ;
++----------------+-------+------+----------------------+
+
+
++-------------------------------------------------+
+; Source assignments for delay:PWM_delay1         ;
++----------------+-------+------+-----------------+
+; Assignment     ; Value ; From ; To              ;
++----------------+-------+------+-----------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[0] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[1] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[2] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[3] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[4] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[5] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[6] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[7] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[8] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[0]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[1]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[2]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[3]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[4]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[5]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[6]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[7]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[8]   ;
++----------------+-------+------+-----------------+
+
+
++-------------------------------------------------+
+; Source assignments for delay:PWM_delay2         ;
++----------------+-------+------+-----------------+
+; Assignment     ; Value ; From ; To              ;
++----------------+-------+------+-----------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[0] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[1] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[2] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[3] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[4] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[5] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[6] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[7] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[8] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[0]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[1]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[2]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[3]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[4]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[5]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[6]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[7]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[8]   ;
++----------------+-------+------+-----------------+
+
+
++-------------------------------------------------+
+; Source assignments for delay:PWM_delay3         ;
++----------------+-------+------+-----------------+
+; Assignment     ; Value ; From ; To              ;
++----------------+-------+------+-----------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[0] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[1] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[2] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[3] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[4] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[5] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[6] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[7] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[8] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[0]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[1]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[2]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[3]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[4]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[5]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[6]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[7]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[8]   ;
++----------------+-------+------+-----------------+
+
+
++-------------------------------------------------+
+; Source assignments for delay:PWM_delay4         ;
++----------------+-------+------+-----------------+
+; Assignment     ; Value ; From ; To              ;
++----------------+-------+------+-----------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[0] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[1] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[2] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[3] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[4] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[5] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[6] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[7] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[8] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[0]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[1]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[2]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[3]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[4]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[5]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[6]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[7]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[8]   ;
++----------------+-------+------+-----------------+
+
+
++-------------------------------------------------+
+; Source assignments for delay:PWM_delay5         ;
++----------------+-------+------+-----------------+
+; Assignment     ; Value ; From ; To              ;
++----------------+-------+------+-----------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[0] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[1] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[2] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[3] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[4] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[5] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[6] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[7] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[8] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[0]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[1]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[2]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[3]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[4]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[5]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[6]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[7]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[8]   ;
++----------------+-------+------+-----------------+
+
+
++-------------------------------------------------+
+; Source assignments for delay:PWM_delay6         ;
++----------------+-------+------+-----------------+
+; Assignment     ; Value ; From ; To              ;
++----------------+-------+------+-----------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[0] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[1] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[2] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[3] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[4] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[5] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[6] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[7] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[8] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[0]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[1]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[2]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[3]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[4]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[5]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[6]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[7]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[8]   ;
++----------------+-------+------+-----------------+
+
+
++--------------------------------------------------+
+; Source assignments for Decoder:receive           ;
++----------------+-------+------+------------------+
+; Assignment     ; Value ; From ; To               ;
++----------------+-------+------+------------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[1]    ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[0]    ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[2]    ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[3]    ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[4]    ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[5]    ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[6]    ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[7]    ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[8]    ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[9]    ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[10]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[11]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[0]  ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[1]  ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[2]  ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[3]  ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[4]  ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[5]  ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[6]  ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[7]  ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[8]  ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[9]  ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[10] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[11] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[0]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[1]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[2]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[3]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[4]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[5]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[0]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[1]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[2]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[3]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[4]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[5]      ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[0]             ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[1]             ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[2]             ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[3]             ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[4]             ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[5]             ;
++----------------+-------+------+------------------+
+
+
++---------------------------------------------+
+; Source assignments for Encoder:send         ;
++----------------+-------+------+-------------+
+; Assignment     ; Value ; From ; To          ;
++----------------+-------+------+-------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[0] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[1] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[2] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[3] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[4] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[5] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[6] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[7] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[8] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[9] ;
++----------------+-------+------+-------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 6.0 Build 178 04/27/2006 SJ Full Version
+    Info: Processing started: Tue Jul 17 16:02:28 2012
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Phase_ctrl -c Phase_ctrl
+Info: Found 2 design units, including 1 entities, in source file Phase_ctrl.vhd
+    Info: Found design unit 1: phase_ctrl-func
+    Info: Found entity 1: phase_ctrl
+Info: Found 2 design units, including 1 entities, in source file delay.vhd
+    Info: Found design unit 1: delay-func
+    Info: Found entity 1: delay
+Info: Found 2 design units, including 1 entities, in source file Decoder.vhd
+    Info: Found design unit 1: Decoder-func
+    Info: Found entity 1: Decoder
+Info: Found 2 design units, including 1 entities, in source file Encoder.vhd
+    Info: Found design unit 1: Encoder-func
+    Info: Found entity 1: Encoder
+Info: Elaborating entity "Phase_ctrl" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at Phase_ctrl.vhd(45): object "start_test" assigned a value but never read
+Info: Elaborating entity "delay" for hierarchy "delay:PWM_delay1"
+Warning (10036): Verilog HDL or VHDL warning at delay.vhd(27): object "counter_up_reset" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at delay.vhd(27): object "counter_down_reset" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at delay.vhd(72): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Warning (10492): VHDL Process Statement warning at delay.vhd(72): signal "counter_up_f" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Warning (10492): VHDL Process Statement warning at delay.vhd(81): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Warning (10492): VHDL Process Statement warning at delay.vhd(81): signal "counter_down_f" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Info: Elaborating entity "Decoder" for hierarchy "Decoder:receive"
+Info: Elaborating entity "Encoder" for hierarchy "Encoder:send"
+Warning (10492): VHDL Process Statement warning at Encoder.vhd(30): signal "data" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Warning: Reduced register "Encoder:send|data_temp[10]" with stuck data_in port to stuck value GND
+Warning: Reduced register "Encoder:send|data_temp[11]" with stuck data_in port to stuck value GND
+Warning: Reduced register "Encoder:send|data_temp[12]" with stuck data_in port to stuck value GND
+Warning: Reduced register "Encoder:send|data_temp[13]" with stuck data_in port to stuck value GND
+Warning: Reduced register "Encoder:send|data_temp[14]" with stuck data_in port to stuck value GND
+Warning: The bidir "io[5]" has no source; inserted an always disabled tri-state buffer.
+Warning: The bidir "io[6]" has no source; inserted an always disabled tri-state buffer.
+Warning: The bidir "io[7]" has no source; inserted an always disabled tri-state buffer.
+Warning: The bidir "io[8]" has no source; inserted an always disabled tri-state buffer.
+Warning: The bidir "io[9]" has no source; inserted an always disabled tri-state buffer.
+Warning: The bidir "io[10]" has no source; inserted an always disabled tri-state buffer.
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus io[1]~3 that it feeds
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus io[2]~2 that it feeds
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus io[3]~1 that it feeds
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus io[4]~0 that it feeds
+Warning: TRI or OPNDRN buffers permanently enabled
+    Warning: Node "io[1]~20"
+    Warning: Node "io[2]~21"
+    Warning: Node "io[3]~22"
+    Warning: Node "io[4]~23"
+Warning: Output pins are stuck at VCC or GND
+    Warning: Pin "AD_TriState" stuck at GND
+    Warning: Pin "AD_STBY" stuck at GND
+    Warning: Pin "rest[1]" stuck at GND
+    Warning: Pin "rest[2]" stuck at GND
+    Warning: Pin "rest[3]" stuck at GND
+    Warning: Pin "rest[4]" stuck at GND
+    Warning: Pin "rest[5]" stuck at GND
+    Warning: Pin "rest[6]" stuck at GND
+    Warning: Pin "rest[7]" stuck at GND
+Info: Registers with preset signals will power-up high
+Warning: Design contains 1 input pin(s) that do not drive logic
+    Warning: No output dependent on input pin "AD_OTR"
+Info: Implemented 669 device resources after synthesis - the final resource count might be different
+    Info: Implemented 30 input pins
+    Info: Implemented 36 output pins
+    Info: Implemented 10 bidirectional pins
+    Info: Implemented 593 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 40 warnings
+    Info: Processing ended: Tue Jul 17 16:02:33 2012
+    Info: Elapsed time: 00:00:05
+
+

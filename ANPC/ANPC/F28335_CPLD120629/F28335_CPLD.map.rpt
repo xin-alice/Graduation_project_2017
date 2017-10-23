@@ -1,0 +1,748 @@
+Analysis & Synthesis report for F28335_CPLD
+Fri Jun 29 16:37:32 2012
+Version 6.0 Build 178 04/27/2006 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. General Register Statistics
+  8. Inverted Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Source assignments for Top-level Entity: |F28335_CPLD
+ 11. Source assignments for Decoder:receive_A
+ 12. Source assignments for Decoder:receive_B
+ 13. Source assignments for Decoder:receive_C
+ 14. Source assignments for Decoder:receive_U
+ 15. Source assignments for Decoder:receive_V
+ 16. Source assignments for Decoder:receive_W
+ 17. Source assignments for Encoder:sendA
+ 18. Source assignments for Encoder:sendB
+ 19. Source assignments for Encoder:sendC
+ 20. Source assignments for Encoder:sendU
+ 21. Source assignments for Encoder:sendV
+ 22. Source assignments for Encoder:sendW
+ 23. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Fri Jun 29 16:37:32 2012    ;
+; Quartus II Version          ; 6.0 Build 178 04/27/2006 SJ Full Version ;
+; Revision Name               ; F28335_CPLD                              ;
+; Top-level Entity Name       ; F28335_CPLD                              ;
+; Family                      ; MAX II                                   ;
+; Total logic elements        ; 1,490                                    ;
+; Total pins                  ; 116                                      ;
+; Total virtual pins          ; 0                                        ;
+; UFM blocks                  ; 0                                        ;
++-----------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                             ; Setting            ; Default Value      ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                             ; EPM1270T144C5      ;                    ;
+; Top-level entity name                                              ; F28335_CPLD        ; F28335_CPLD        ;
+; Family name                                                        ; MAX II             ; Stratix            ;
+; Use smart compilation                                              ; Off                ; Off                ;
+; Restructure Multiplexers                                           ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                ; Off                ; Off                ;
+; Preserve fewer node names                                          ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                          ; Off                ; Off                ;
+; Verilog Version                                                    ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                       ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                           ; Auto               ; Auto               ;
+; Extract Verilog State Machines                                     ; On                 ; On                 ;
+; Extract VHDL State Machines                                        ; On                 ; On                 ;
+; Add Pass-Through Logic to Inferred RAMs                            ; On                 ; On                 ;
+; NOT Gate Push-Back                                                 ; On                 ; On                 ;
+; Power-Up Don't Care                                                ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                       ; Off                ; Off                ;
+; Remove Duplicate Registers                                         ; On                 ; On                 ;
+; Ignore CARRY Buffers                                               ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                             ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                              ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore LCELL Buffers                                               ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                     ; Off                ; Off                ;
+; Optimization Technique -- MAX II                                   ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II ; 70                 ; 70                 ;
+; Auto Carry Chains                                                  ; On                 ; On                 ;
+; Auto Open-Drain Pins                                               ; On                 ; On                 ;
+; Remove Duplicate Logic                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                              ; Off                ; Off                ;
+; Perform gate-level register retiming                               ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax             ; On                 ; On                 ;
+; Auto Shift Register Replacement                                    ; On                 ; On                 ;
+; Auto Clock Enable Replacement                                      ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                  ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                             ; Off                ; Off                ;
+; Auto RAM Block Balancing                                           ; On                 ; On                 ;
+; Auto Resource Sharing                                              ; Off                ; Off                ;
+; Maximum Number of M512 Memory Blocks                               ; Unlimited          ; Unlimited          ;
+; Maximum Number of M4K Memory Blocks                                ; Unlimited          ; Unlimited          ;
+; Maximum Number of M-RAM Memory Blocks                              ; Unlimited          ; Unlimited          ;
+; Ignore translate_off and translate_on Synthesis Directives         ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                 ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                   ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                       ; Normal compilation ; Normal compilation ;
+; HDL message level                                                  ; Level2             ; Level2             ;
++--------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                   ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                      ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+
+; F28335DSP.vhd                    ; yes             ; User VHDL File  ; E:/works/VHDLWorks/5L-ANPC/×îÖÕ°æ/F28335_CPLD120629/F28335DSP.vhd ;
+; Encoder.vhd                      ; yes             ; User VHDL File  ; E:/works/VHDLWorks/5L-ANPC/×îÖÕ°æ/F28335_CPLD120629/Encoder.vhd   ;
+; Decoder.vhd                      ; yes             ; User VHDL File  ; E:/works/VHDLWorks/5L-ANPC/×îÖÕ°æ/F28335_CPLD120629/Decoder.vhd   ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 1490  ;
+;     -- Combinational with no register       ; 731   ;
+;     -- Register only                        ; 361   ;
+;     -- Combinational with a register        ; 398   ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 586   ;
+;     -- 3 input functions                    ; 204   ;
+;     -- 2 input functions                    ; 293   ;
+;     -- 1 input functions                    ; 45    ;
+;     -- 0 input functions                    ; 1     ;
+;         -- Combinational cells for routing  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 1263  ;
+;     -- arithmetic mode                      ; 227   ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 63    ;
+;     -- asynchronous clear/load mode         ; 689   ;
+;                                             ;       ;
+; Total registers                             ; 759   ;
+; Total logic cells in carry chains           ; 265   ;
+; I/O pins                                    ; 116   ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 615   ;
+; Total fan-out                               ; 5886  ;
+; Average fan-out                             ; 3.67  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                              ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name            ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------+
+; |F28335_CPLD               ; 1490 (271)  ; 759          ; 0          ; 116  ; 0            ; 731 (124)    ; 361 (103)         ; 398 (44)         ; 265 (25)        ; 0 (0)      ; |F28335_CPLD                   ;
+;    |Decoder:receive_A|     ; 152 (152)   ; 88           ; 0          ; 0    ; 0            ; 64 (64)      ; 38 (38)           ; 50 (50)          ; 32 (32)         ; 0 (0)      ; |F28335_CPLD|Decoder:receive_A ;
+;    |Decoder:receive_B|     ; 152 (152)   ; 88           ; 0          ; 0    ; 0            ; 64 (64)      ; 38 (38)           ; 50 (50)          ; 32 (32)         ; 0 (0)      ; |F28335_CPLD|Decoder:receive_B ;
+;    |Decoder:receive_C|     ; 152 (152)   ; 88           ; 0          ; 0    ; 0            ; 64 (64)      ; 38 (38)           ; 50 (50)          ; 32 (32)         ; 0 (0)      ; |F28335_CPLD|Decoder:receive_C ;
+;    |Decoder:receive_U|     ; 152 (152)   ; 88           ; 0          ; 0    ; 0            ; 64 (64)      ; 38 (38)           ; 50 (50)          ; 32 (32)         ; 0 (0)      ; |F28335_CPLD|Decoder:receive_U ;
+;    |Decoder:receive_V|     ; 152 (152)   ; 88           ; 0          ; 0    ; 0            ; 64 (64)      ; 38 (38)           ; 50 (50)          ; 32 (32)         ; 0 (0)      ; |F28335_CPLD|Decoder:receive_V ;
+;    |Decoder:receive_W|     ; 152 (152)   ; 88           ; 0          ; 0    ; 0            ; 64 (64)      ; 38 (38)           ; 50 (50)          ; 32 (32)         ; 0 (0)      ; |F28335_CPLD|Decoder:receive_W ;
+;    |Encoder:sendA|         ; 51 (51)     ; 14           ; 0          ; 0    ; 0            ; 37 (37)      ; 5 (5)             ; 9 (9)            ; 8 (8)           ; 0 (0)      ; |F28335_CPLD|Encoder:sendA     ;
+;    |Encoder:sendB|         ; 52 (52)     ; 14           ; 0          ; 0    ; 0            ; 38 (38)      ; 5 (5)             ; 9 (9)            ; 8 (8)           ; 0 (0)      ; |F28335_CPLD|Encoder:sendB     ;
+;    |Encoder:sendC|         ; 52 (52)     ; 14           ; 0          ; 0    ; 0            ; 38 (38)      ; 5 (5)             ; 9 (9)            ; 8 (8)           ; 0 (0)      ; |F28335_CPLD|Encoder:sendC     ;
+;    |Encoder:sendU|         ; 50 (50)     ; 14           ; 0          ; 0    ; 0            ; 36 (36)      ; 5 (5)             ; 9 (9)            ; 8 (8)           ; 0 (0)      ; |F28335_CPLD|Encoder:sendU     ;
+;    |Encoder:sendV|         ; 51 (51)     ; 14           ; 0          ; 0    ; 0            ; 37 (37)      ; 5 (5)             ; 9 (9)            ; 8 (8)           ; 0 (0)      ; |F28335_CPLD|Encoder:sendV     ;
+;    |Encoder:sendW|         ; 51 (51)     ; 14           ; 0          ; 0    ; 0            ; 37 (37)      ; 5 (5)             ; 9 (9)            ; 8 (8)           ; 0 (0)      ; |F28335_CPLD|Encoder:sendW     ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 759   ;
+; Number of registers using Synchronous Clear  ; 4     ;
+; Number of registers using Synchronous Load   ; 63    ;
+; Number of registers using Asynchronous Clear ; 635   ;
+; Number of registers using Asynchronous Load  ; 54    ;
+; Number of registers using Clock Enable       ; 324   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; Encoder:sendA|pulse                     ; 1       ;
+; Encoder:sendB|pulse                     ; 1       ;
+; Encoder:sendC|pulse                     ; 1       ;
+; Encoder:sendU|pulse                     ; 1       ;
+; Encoder:sendV|pulse                     ; 1       ;
+; Encoder:sendW|pulse                     ; 1       ;
+; DSP_lock                                ; 3       ;
+; WEn_last[0]                             ; 2       ;
+; WEn_last[1]                             ; 2       ;
+; WEn_last[2]                             ; 2       ;
+; WEn_last[3]                             ; 2       ;
+; Decoder:receive_W|err_com               ; 2       ;
+; Decoder:receive_V|err_com               ; 2       ;
+; Decoder:receive_U|err_com               ; 2       ;
+; Decoder:receive_C|err_com               ; 2       ;
+; Decoder:receive_B|err_com               ; 2       ;
+; Decoder:receive_A|err_com               ; 2       ;
+; Total number of inverted registers = 17 ;         ;
++-----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; 3:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; Yes        ; |F28335_CPLD|count_EPWMSYNCO[16]               ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |F28335_CPLD|Decoder:receive_W|counter2[2]     ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |F28335_CPLD|Decoder:receive_V|counter2[4]     ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |F28335_CPLD|Decoder:receive_U|counter2[3]     ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |F28335_CPLD|Decoder:receive_C|counter2[2]     ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |F28335_CPLD|Decoder:receive_B|counter2[3]     ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |F28335_CPLD|Decoder:receive_A|counter2[2]     ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |F28335_CPLD|Decoder:receive_W|counter_up[0]   ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |F28335_CPLD|Decoder:receive_V|counter_up[6]   ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |F28335_CPLD|Decoder:receive_U|counter_up[0]   ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |F28335_CPLD|Decoder:receive_C|counter_up[0]   ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |F28335_CPLD|Decoder:receive_B|counter_up[6]   ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |F28335_CPLD|Decoder:receive_A|counter_up[1]   ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |F28335_CPLD|Decoder:receive_W|counter_down[3] ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |F28335_CPLD|Decoder:receive_V|counter_down[3] ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |F28335_CPLD|Decoder:receive_U|counter_down[6] ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |F28335_CPLD|Decoder:receive_C|counter_down[0] ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |F28335_CPLD|Decoder:receive_B|counter_down[6] ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |F28335_CPLD|Decoder:receive_A|counter_down[2] ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |F28335_CPLD|Decoder:receive_W|counter1[4]     ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |F28335_CPLD|Decoder:receive_V|counter1[1]     ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |F28335_CPLD|Decoder:receive_U|counter1[3]     ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |F28335_CPLD|Decoder:receive_C|counter1[1]     ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |F28335_CPLD|Decoder:receive_B|counter1[3]     ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |F28335_CPLD|Decoder:receive_A|counter1[1]     ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |F28335_CPLD|Decoder:receive_W|i[2]            ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |F28335_CPLD|Decoder:receive_V|i[1]            ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |F28335_CPLD|Decoder:receive_U|i[1]            ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |F28335_CPLD|Decoder:receive_C|i[1]            ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |F28335_CPLD|Decoder:receive_B|i[5]            ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |F28335_CPLD|Decoder:receive_A|i[1]            ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |F28335_CPLD|Encoder:sendA|counter1[3]         ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |F28335_CPLD|Encoder:sendB|counter1[7]         ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |F28335_CPLD|Encoder:sendC|counter1[6]         ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |F28335_CPLD|Encoder:sendU|counter1[6]         ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |F28335_CPLD|Encoder:sendV|counter1[1]         ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |F28335_CPLD|Encoder:sendW|counter1[1]         ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |F28335_CPLD|DATA[15]~reg0                     ;
+; 7:1                ; 12 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; Yes        ; |F28335_CPLD|DATA[9]~reg0                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Source assignments for Top-level Entity: |F28335_CPLD ;
++----------------+-------+------+-----------------------+
+; Assignment     ; Value ; From ; To                    ;
++----------------+-------+------+-----------------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter_com[7]        ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_com[6]        ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_com[5]        ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_com[4]        ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_com[3]        ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_com[2]        ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_com[1]        ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_com[0]        ;
+; POWER_UP_LEVEL ; Low   ; -    ; count_EPWMSYNCO[0]    ;
+; POWER_UP_LEVEL ; Low   ; -    ; count_EPWMSYNCO[1]    ;
+; POWER_UP_LEVEL ; Low   ; -    ; count_EPWMSYNCO[2]    ;
+; POWER_UP_LEVEL ; Low   ; -    ; count_EPWMSYNCO[3]    ;
+; POWER_UP_LEVEL ; Low   ; -    ; count_EPWMSYNCO[4]    ;
+; POWER_UP_LEVEL ; Low   ; -    ; count_EPWMSYNCO[5]    ;
+; POWER_UP_LEVEL ; Low   ; -    ; count_EPWMSYNCO[6]    ;
+; POWER_UP_LEVEL ; Low   ; -    ; count_EPWMSYNCO[7]    ;
+; POWER_UP_LEVEL ; Low   ; -    ; count_EPWMSYNCO[8]    ;
+; POWER_UP_LEVEL ; Low   ; -    ; count_EPWMSYNCO[9]    ;
+; POWER_UP_LEVEL ; Low   ; -    ; count_EPWMSYNCO[10]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; count_EPWMSYNCO[11]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; count_EPWMSYNCO[12]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; count_EPWMSYNCO[13]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; count_EPWMSYNCO[14]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; count_EPWMSYNCO[15]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; count_EPWMSYNCO[16]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; DATA[0]~en            ;
+; POWER_UP_LEVEL ; Low   ; -    ; DATA[1]~en            ;
+; POWER_UP_LEVEL ; Low   ; -    ; DATA[2]~en            ;
+; POWER_UP_LEVEL ; Low   ; -    ; DATA[3]~en            ;
+; POWER_UP_LEVEL ; Low   ; -    ; DATA[4]~en            ;
+; POWER_UP_LEVEL ; Low   ; -    ; DATA[5]~en            ;
+; POWER_UP_LEVEL ; Low   ; -    ; DATA[6]~en            ;
+; POWER_UP_LEVEL ; Low   ; -    ; DATA[7]~en            ;
+; POWER_UP_LEVEL ; Low   ; -    ; DATA[8]~en            ;
+; POWER_UP_LEVEL ; Low   ; -    ; DATA[9]~en            ;
+; POWER_UP_LEVEL ; Low   ; -    ; DATA[10]~en           ;
+; POWER_UP_LEVEL ; Low   ; -    ; DATA[11]~en           ;
+; POWER_UP_LEVEL ; Low   ; -    ; DATA[12]~en           ;
+; POWER_UP_LEVEL ; Low   ; -    ; DATA[13]~en           ;
+; POWER_UP_LEVEL ; Low   ; -    ; DATA[14]~en           ;
+; POWER_UP_LEVEL ; Low   ; -    ; DATA[15]~en           ;
++----------------+-------+------+-----------------------+
+
+
++-------------------------------------------------+
+; Source assignments for Decoder:receive_A        ;
++----------------+-------+------+-----------------+
+; Assignment     ; Value ; From ; To              ;
++----------------+-------+------+-----------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[1]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[0]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[2]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[3]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[4]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[5]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[6]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[0] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[1] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[2] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[3] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[4] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[5] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[6] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[0]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[1]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[2]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[3]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[4]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[5]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[0]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[1]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[2]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[3]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[4]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[5]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[0]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[1]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[2]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[3]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[4]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[5]            ;
++----------------+-------+------+-----------------+
+
+
++-------------------------------------------------+
+; Source assignments for Decoder:receive_B        ;
++----------------+-------+------+-----------------+
+; Assignment     ; Value ; From ; To              ;
++----------------+-------+------+-----------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[1]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[0]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[2]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[3]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[4]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[5]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[6]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[0] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[1] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[2] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[3] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[4] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[5] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[6] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[0]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[1]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[2]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[3]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[4]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[5]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[0]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[1]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[2]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[3]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[4]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[5]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[0]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[1]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[2]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[3]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[4]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[5]            ;
++----------------+-------+------+-----------------+
+
+
++-------------------------------------------------+
+; Source assignments for Decoder:receive_C        ;
++----------------+-------+------+-----------------+
+; Assignment     ; Value ; From ; To              ;
++----------------+-------+------+-----------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[1]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[0]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[2]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[3]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[4]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[5]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[6]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[0] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[1] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[2] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[3] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[4] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[5] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[6] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[0]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[1]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[2]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[3]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[4]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[5]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[0]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[1]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[2]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[3]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[4]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[5]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[0]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[1]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[2]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[3]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[4]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[5]            ;
++----------------+-------+------+-----------------+
+
+
++-------------------------------------------------+
+; Source assignments for Decoder:receive_U        ;
++----------------+-------+------+-----------------+
+; Assignment     ; Value ; From ; To              ;
++----------------+-------+------+-----------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[1]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[0]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[2]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[3]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[4]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[5]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[6]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[0] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[1] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[2] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[3] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[4] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[5] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[6] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[0]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[1]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[2]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[3]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[4]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[5]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[0]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[1]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[2]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[3]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[4]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[5]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[0]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[1]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[2]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[3]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[4]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[5]            ;
++----------------+-------+------+-----------------+
+
+
++-------------------------------------------------+
+; Source assignments for Decoder:receive_V        ;
++----------------+-------+------+-----------------+
+; Assignment     ; Value ; From ; To              ;
++----------------+-------+------+-----------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[1]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[0]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[2]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[3]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[4]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[5]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[6]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[0] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[1] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[2] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[3] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[4] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[5] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[6] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[0]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[1]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[2]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[3]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[4]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[5]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[0]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[1]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[2]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[3]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[4]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[5]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[0]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[1]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[2]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[3]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[4]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[5]            ;
++----------------+-------+------+-----------------+
+
+
++-------------------------------------------------+
+; Source assignments for Decoder:receive_W        ;
++----------------+-------+------+-----------------+
+; Assignment     ; Value ; From ; To              ;
++----------------+-------+------+-----------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[1]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[0]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[2]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[3]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[4]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[5]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_up[6]   ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[0] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[1] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[2] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[3] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[4] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[5] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter_down[6] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[0]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[1]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[2]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[3]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[4]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter2[5]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[0]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[1]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[2]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[3]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[4]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[5]     ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[0]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[1]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[2]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[3]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[4]            ;
+; POWER_UP_LEVEL ; Low   ; -    ; i[5]            ;
++----------------+-------+------+-----------------+
+
+
++---------------------------------------------+
+; Source assignments for Encoder:sendA        ;
++----------------+-------+------+-------------+
+; Assignment     ; Value ; From ; To          ;
++----------------+-------+------+-------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[0] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[1] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[2] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[3] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[4] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[5] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[6] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[7] ;
++----------------+-------+------+-------------+
+
+
++---------------------------------------------+
+; Source assignments for Encoder:sendB        ;
++----------------+-------+------+-------------+
+; Assignment     ; Value ; From ; To          ;
++----------------+-------+------+-------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[0] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[1] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[2] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[3] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[4] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[5] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[6] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[7] ;
++----------------+-------+------+-------------+
+
+
++---------------------------------------------+
+; Source assignments for Encoder:sendC        ;
++----------------+-------+------+-------------+
+; Assignment     ; Value ; From ; To          ;
++----------------+-------+------+-------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[0] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[1] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[2] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[3] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[4] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[5] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[6] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[7] ;
++----------------+-------+------+-------------+
+
+
++---------------------------------------------+
+; Source assignments for Encoder:sendU        ;
++----------------+-------+------+-------------+
+; Assignment     ; Value ; From ; To          ;
++----------------+-------+------+-------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[0] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[1] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[2] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[3] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[4] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[5] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[6] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[7] ;
++----------------+-------+------+-------------+
+
+
++---------------------------------------------+
+; Source assignments for Encoder:sendV        ;
++----------------+-------+------+-------------+
+; Assignment     ; Value ; From ; To          ;
++----------------+-------+------+-------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[0] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[1] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[2] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[3] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[4] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[5] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[6] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[7] ;
++----------------+-------+------+-------------+
+
+
++---------------------------------------------+
+; Source assignments for Encoder:sendW        ;
++----------------+-------+------+-------------+
+; Assignment     ; Value ; From ; To          ;
++----------------+-------+------+-------------+
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[0] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[1] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[2] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[3] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[4] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[5] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[6] ;
+; POWER_UP_LEVEL ; Low   ; -    ; counter1[7] ;
++----------------+-------+------+-------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 6.0 Build 178 04/27/2006 SJ Full Version
+    Info: Processing started: Fri Jun 29 16:37:25 2012
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off F28335_CPLD -c F28335_CPLD
+Info: Found 2 design units, including 1 entities, in source file F28335DSP.vhd
+    Info: Found design unit 1: F28335_CPLD-a
+    Info: Found entity 1: F28335_CPLD
+Info: Found 2 design units, including 1 entities, in source file Encoder.vhd
+    Info: Found design unit 1: Encoder-func
+    Info: Found entity 1: Encoder
+Info: Found 2 design units, including 1 entities, in source file Decoder.vhd
+    Info: Found design unit 1: Decoder-func
+    Info: Found entity 1: Decoder
+Info: Elaborating entity "F28335_CPLD" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at F28335DSP.vhd(130): object "start_test_A" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at F28335DSP.vhd(130): object "start_test_B" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at F28335DSP.vhd(130): object "start_test_C" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at F28335DSP.vhd(131): object "start_test_U" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at F28335DSP.vhd(131): object "start_test_V" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at F28335DSP.vhd(131): object "start_test_W" assigned a value but never read
+Info: Elaborating entity "Decoder" for hierarchy "Decoder:receive_A"
+Info: Elaborating entity "Encoder" for hierarchy "Encoder:sendA"
+Warning (10492): VHDL Process Statement warning at Encoder.vhd(25): signal "start" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Warning (10492): VHDL Process Statement warning at Encoder.vhd(28): signal "data" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Warning (10492): VHDL Process Statement warning at Encoder.vhd(29): signal "start" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "DATA[1]~en" merged to single register "DATA[0]~en"
+    Info: Duplicate register "DATA[2]~en" merged to single register "DATA[0]~en"
+    Info: Duplicate register "DATA[3]~en" merged to single register "DATA[0]~en"
+    Info: Duplicate register "DATA[4]~en" merged to single register "DATA[0]~en"
+    Info: Duplicate register "DATA[5]~en" merged to single register "DATA[0]~en"
+    Info: Duplicate register "DATA[6]~en" merged to single register "DATA[0]~en"
+    Info: Duplicate register "DATA[7]~en" merged to single register "DATA[0]~en"
+    Info: Duplicate register "DATA[8]~en" merged to single register "DATA[0]~en"
+    Info: Duplicate register "DATA[9]~en" merged to single register "DATA[0]~en"
+    Info: Duplicate register "DATA[10]~en" merged to single register "DATA[0]~en"
+    Info: Duplicate register "DATA[11]~en" merged to single register "DATA[0]~en"
+    Info: Duplicate register "DATA[12]~en" merged to single register "DATA[0]~en"
+    Info: Duplicate register "DATA[13]~en" merged to single register "DATA[0]~en"
+    Info: Duplicate register "DATA[14]~en" merged to single register "DATA[0]~en"
+    Info: Duplicate register "DATA[15]~en" merged to single register "DATA[0]~en"
+Warning: Output pins are stuck at VCC or GND
+    Warning: Pin "ECAP5" stuck at GND
+    Warning: Pin "ECAP6" stuck at GND
+    Warning: Pin "USBCSn" stuck at VCC
+Info: Registers with preset signals will power-up high
+Warning: Design contains 21 input pin(s) that do not drive logic
+    Warning: No output dependent on input pin "DSP_clk"
+    Warning: No output dependent on input pin "MCLKXA"
+    Warning: No output dependent on input pin "XA19"
+    Warning: No output dependent on input pin "ZCS7n"
+    Warning: No output dependent on input pin "RDn"
+    Warning: No output dependent on input pin "USBFLAGA"
+    Warning: No output dependent on input pin "USBFLAGB"
+    Warning: No output dependent on input pin "USBFLAGC"
+    Warning: No output dependent on input pin "USBINT0"
+    Warning: No output dependent on input pin "PKTEND"
+    Warning: No output dependent on input pin "OCA"
+    Warning: No output dependent on input pin "OCB"
+    Warning: No output dependent on input pin "OVA"
+    Warning: No output dependent on input pin "OVB"
+    Warning: No output dependent on input pin "pwm4A"
+    Warning: No output dependent on input pin "pwm4B"
+    Warning: No output dependent on input pin "pwm5A"
+    Warning: No output dependent on input pin "pwm5B"
+    Warning: No output dependent on input pin "pwm6A"
+    Warning: No output dependent on input pin "pwm6B"
+    Warning: No output dependent on input pin "EPWMSYNCI"
+Info: Implemented 1606 device resources after synthesis - the final resource count might be different
+    Info: Implemented 50 input pins
+    Info: Implemented 50 output pins
+    Info: Implemented 16 bidirectional pins
+    Info: Implemented 1490 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 35 warnings
+    Info: Processing ended: Fri Jun 29 16:37:32 2012
+    Info: Elapsed time: 00:00:08
+
+
